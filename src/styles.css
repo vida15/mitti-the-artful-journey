@@ -4,21 +4,25 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
+/* MITTI design system — cinematic dark editorial */
 
 @theme inline {
+  --color-void: #0A0907;
+  --color-bone: #E8E0D4;
+  --color-ember: #D4521A;
+  --color-ochre: #C89B3C;
+  --color-dust: #7A6A58;
+  --color-ash: #1E1A16;
+  --color-flare: #FF6B2B;
+  --color-paper: #F2EDE6;
+  --color-ink: #120F0B;
+
+  --font-display: "Bebas Neue", sans-serif;
+  --font-editorial: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-accent: "Abril Fatface", serif;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -63,25 +67,25 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --background: #0A0907;
+  --foreground: #E8E0D4;
+  --card: #1E1A16;
+  --card-foreground: #E8E0D4;
+  --popover: #1E1A16;
+  --popover-foreground: #E8E0D4;
+  --primary: #D4521A;
+  --primary-foreground: #0A0907;
+  --secondary: #1E1A16;
+  --secondary-foreground: #E8E0D4;
+  --muted: #1E1A16;
+  --muted-foreground: #7A6A58;
+  --accent: #C89B3C;
+  --accent-foreground: #0A0907;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: #1E1A16;
+  --input: #1E1A16;
+  --ring: #D4521A;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -138,7 +142,70 @@
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--color-void);
+    color: var(--color-bone);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    cursor: none;
+  }
+
+  @media (pointer: coarse) {
+    body { cursor: auto; }
+  }
+
+  ::selection {
+    background: var(--color-ember);
+    color: var(--color-void);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-editorial);
+  }
+}
+
+@property --grad-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes gradient-spin {
+  to { --grad-angle: 360deg; }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.hero-conic {
+  background: conic-gradient(
+    from var(--grad-angle),
+    #0A0907 0%,
+    #1A1208 25%,
+    rgba(212, 82, 26, 0.08) 50%,
+    rgba(200, 155, 60, 0.06) 75%,
+    #0A0907 100%
+  );
+  animation: gradient-spin 20s linear infinite;
+}
+
+.font-display { font-family: var(--font-display); letter-spacing: 0; }
+.font-editorial { font-family: var(--font-editorial); }
+.font-body { font-family: var(--font-body); }
+.font-mono { font-family: var(--font-mono); letter-spacing: 0.1em; }
+.font-accent { font-family: var(--font-accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-conic { animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

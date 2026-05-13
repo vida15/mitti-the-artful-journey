@@ -14,7 +14,185 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      artists: {
+        Row: {
+          bio: string | null
+          created_at: string
+          featured: boolean
+          id: string
+          name: string
+          origin: string | null
+          portrait_url: string | null
+          slug: string
+        }
+        Insert: {
+          bio?: string | null
+          created_at?: string
+          featured?: boolean
+          id?: string
+          name: string
+          origin?: string | null
+          portrait_url?: string | null
+          slug: string
+        }
+        Update: {
+          bio?: string | null
+          created_at?: string
+          featured?: boolean
+          id?: string
+          name?: string
+          origin?: string | null
+          portrait_url?: string | null
+          slug?: string
+        }
+        Relationships: []
+      }
+      newsletter: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      orders: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          items: Json
+          payment_method: string
+          payment_status: string
+          shipping_address: Json | null
+          stripe_session_id: string | null
+          subtotal: number
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          items?: Json
+          payment_method: string
+          payment_status?: string
+          shipping_address?: Json | null
+          stripe_session_id?: string | null
+          subtotal: number
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          items?: Json
+          payment_method?: string
+          payment_status?: string
+          shipping_address?: Json | null
+          stripe_session_id?: string | null
+          subtotal?: number
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      products: {
+        Row: {
+          artist_id: string | null
+          category: string
+          created_at: string
+          description: string | null
+          dimensions: string | null
+          featured: boolean
+          id: string
+          images: Json
+          in_stock: boolean
+          medium: string | null
+          price_inr: number
+          sizes: Json
+          slug: string
+          story: string | null
+          title: string
+        }
+        Insert: {
+          artist_id?: string | null
+          category: string
+          created_at?: string
+          description?: string | null
+          dimensions?: string | null
+          featured?: boolean
+          id?: string
+          images?: Json
+          in_stock?: boolean
+          medium?: string | null
+          price_inr: number
+          sizes?: Json
+          slug: string
+          story?: string | null
+          title: string
+        }
+        Update: {
+          artist_id?: string | null
+          category?: string
+          created_at?: string
+          description?: string | null
+          dimensions?: string | null
+          featured?: boolean
+          id?: string
+          images?: Json
+          in_stock?: boolean
+          medium?: string | null
+          price_inr?: number
+          sizes?: Json
+          slug?: string
+          story?: string | null
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "products_artist_id_fkey"
+            columns: ["artist_id"]
+            isOneToOne: false
+            referencedRelation: "artists"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      testimonials: {
+        Row: {
+          author: string
+          created_at: string
+          id: string
+          location: string | null
+          quote: string
+          sort_order: number
+        }
+        Insert: {
+          author: string
+          created_at?: string
+          id?: string
+          location?: string | null
+          quote: string
+          sort_order?: number
+        }
+        Update: {
+          author?: string
+          created_at?: string
+          id?: string
+          location?: string | null
+          quote?: string
+          sort_order?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
