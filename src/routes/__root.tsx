@@ -9,6 +9,14 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { LenisProvider } from "@/components/motion/LenisProvider";
+import { CustomCursor } from "@/components/motion/CustomCursor";
+import { NoiseLayer } from "@/components/motion/NoiseLayer";
+import { PageTransition } from "@/components/motion/PageTransition";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { CartDrawer } from "@/components/layout/CartDrawer";
+import { MobileMenu } from "@/components/layout/MobileMenu";
 
 function NotFoundComponent() {
   return (
@@ -72,19 +80,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "MITTI — The Artful Journey" },
+      { name: "description", content: "MITTI — a cinematic gallery of Indian art, craft, and objects. Hand-picked works from artists across the subcontinent." },
+      { property: "og:title", content: "MITTI — The Artful Journey" },
+      { property: "og:description", content: "A cinematic gallery of Indian art, craft, and objects." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@300;400;700&family=IBM+Plex+Mono:wght@400;500&family=Abril+Fatface&display=swap",
       },
     ],
   }),
@@ -113,7 +122,20 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <LenisProvider>
+        <div style={{ backgroundColor: "var(--color-void)", color: "var(--color-bone)", minHeight: "100vh" }} className="font-body">
+          <NoiseLayer />
+          <CustomCursor />
+          <PageTransition />
+          <Navbar />
+          <MobileMenu />
+          <CartDrawer />
+          <main className="pt-[52px]">
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
+      </LenisProvider>
     </QueryClientProvider>
   );
 }
