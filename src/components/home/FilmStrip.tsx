@@ -7,13 +7,17 @@ export function FilmStrip() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
 
-  const panels = [
+  type Panel =
+    | { type: "image"; src: string; title: string; price?: number; cta?: boolean }
+    | { type: "type"; text: string }
+    | { type: "split"; quote: string; artist: string };
+  const panels: Panel[] = [
     { type: "image", src: placeholder("Monsoon I", 1600, 1000, 2), title: "Monsoon I", price: 48000 },
     { type: "type", text: "NEW ARRIVALS" },
     { type: "image", src: placeholder("Vessel No. 7", 1600, 1000, 0), title: "Vessel No. 7", price: 36000 },
     { type: "split", quote: "I don't make art for walls. I make it for the people who live with it.", artist: "Asha Naik" },
     { type: "image", src: placeholder("Aperture", 1600, 1000, 1), title: "Aperture", cta: true },
-  ] as const;
+  ];
 
   return (
     <section ref={ref} className="relative" style={{ height: `${panels.length * 100}vh` }}>

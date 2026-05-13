@@ -1,13 +1,14 @@
 import { useCountUp } from "@/hooks/useCountUp";
 
-const stats = [
+type StatItem = { n: number; suffix: string; label: string; prefix?: string; float?: boolean };
+const stats: StatItem[] = [
   { n: 2400, suffix: "", label: "Works" },
   { n: 94, suffix: "", label: "Artists" },
   { n: 6.2, suffix: "Cr+", label: "Paid to Makers", prefix: "₹", float: true },
   { n: 48, suffix: "hrs", label: "Avg. Dispatch" },
-] as const;
+];
 
-function Stat({ s }: { s: (typeof stats)[number] }) {
+function Stat({ s }: { s: StatItem }) {
   const [ref, v] = useCountUp(s.float ? Math.round(s.n * 10) : s.n, 1800);
   const display = s.float ? (v / 10).toFixed(1) : v.toLocaleString("en-IN");
   return (
