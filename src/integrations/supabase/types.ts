@@ -47,6 +47,42 @@ export type Database = {
         }
         Relationships: []
       }
+      journal_posts: {
+        Row: {
+          author: string | null
+          body: string | null
+          cover_url: string | null
+          created_at: string
+          excerpt: string | null
+          id: string
+          published_at: string
+          slug: string
+          title: string
+        }
+        Insert: {
+          author?: string | null
+          body?: string | null
+          cover_url?: string | null
+          created_at?: string
+          excerpt?: string | null
+          id?: string
+          published_at?: string
+          slug: string
+          title: string
+        }
+        Update: {
+          author?: string | null
+          body?: string | null
+          cover_url?: string | null
+          created_at?: string
+          excerpt?: string | null
+          id?: string
+          published_at?: string
+          slug?: string
+          title?: string
+        }
+        Relationships: []
+      }
       newsletter: {
         Row: {
           created_at: string
@@ -104,6 +140,36 @@ export type Database = {
         }
         Relationships: []
       }
+      press_mentions: {
+        Row: {
+          created_at: string
+          id: string
+          logo_url: string | null
+          publication: string
+          quote: string | null
+          sort_order: number
+          url: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          logo_url?: string | null
+          publication: string
+          quote?: string | null
+          sort_order?: number
+          url?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          logo_url?: string | null
+          publication?: string
+          quote?: string | null
+          sort_order?: number
+          url?: string | null
+        }
+        Relationships: []
+      }
       products: {
         Row: {
           artist_id: string | null
@@ -121,6 +187,7 @@ export type Database = {
           slug: string
           story: string | null
           title: string
+          year: number | null
         }
         Insert: {
           artist_id?: string | null
@@ -138,6 +205,7 @@ export type Database = {
           slug: string
           story?: string | null
           title: string
+          year?: number | null
         }
         Update: {
           artist_id?: string | null
@@ -155,6 +223,7 @@ export type Database = {
           slug?: string
           story?: string | null
           title?: string
+          year?: number | null
         }
         Relationships: [
           {
