@@ -38,13 +38,39 @@ function ArtistPage() {
           <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>{a.origin ?? "India"}</p>
           <h1 className="mt-4 font-display leading-none" style={{ fontSize: "clamp(56px, 9vw, 140px)", color: "var(--color-bone)" }}>{a.name}</h1>
           {a.bio && <p className="mt-8 font-editorial italic text-lg leading-relaxed" style={{ color: "var(--color-bone)", opacity: 0.85 }}>{a.bio}</p>}
+          <div className="mt-10 grid grid-cols-3 gap-4 border-t pt-6" style={{ borderColor: "rgba(190,189,149,0.2)" }}>
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>Works</p>
+              <p className="mt-1 font-display text-3xl" style={{ color: "var(--color-ember)" }}>{(data?.works ?? []).length}</p>
+            </div>
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>Origin</p>
+              <p className="mt-1 font-editorial italic text-lg" style={{ color: "var(--color-bone)" }}>{(a.origin ?? "India").split(",")[0]}</p>
+            </div>
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>Status</p>
+              <p className="mt-1 font-editorial italic text-lg" style={{ color: "var(--color-ochre)" }}>Accepting</p>
+            </div>
+          </div>
         </div>
       </div>
+      {a.bio && (
+        <div className="mx-auto my-24 max-w-3xl border-y py-12 text-center" style={{ borderColor: "rgba(190,189,149,0.2)" }}>
+          <p className="font-editorial italic" style={{ fontSize: "clamp(28px, 4vw, 48px)", color: "var(--color-bone)" }}>
+            "{a.bio.split(".")[0]}."
+          </p>
+        </div>
+      )}
       <h2 className="mb-8 mt-24 font-display text-5xl" style={{ color: "var(--color-bone)" }}>Works</h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {(data?.works ?? []).map((p) => (
           <ProductCard key={p.id} p={p} />
         ))}
+      </div>
+      <div className="mt-20 text-center">
+        <Link to="/artists" data-cursor="link" className="font-mono text-[11px] uppercase tracking-widest underline-offset-8 hover:underline" style={{ color: "var(--color-ochre)" }}>
+          ← All artists
+        </Link>
       </div>
     </div>
   );

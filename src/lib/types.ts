@@ -35,6 +35,26 @@ export type Testimonial = {
   sort_order: number;
 };
 
+export type JournalPost = {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string | null;
+  body: string | null;
+  cover_url: string | null;
+  author: string | null;
+  published_at: string;
+};
+
+export type PressMention = {
+  id: string;
+  publication: string;
+  quote: string | null;
+  url: string | null;
+  logo_url: string | null;
+  sort_order: number;
+};
+
 export type CartItem = {
   productId: string;
   slug: string;

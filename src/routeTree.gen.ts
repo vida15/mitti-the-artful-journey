@@ -12,8 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as CollectionsRouteImport } from './routes/collections'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as JournalIndexRouteImport } from './routes/journal.index'
 import { Route as ArtistsIndexRouteImport } from './routes/artists.index'
 import { Route as WorksSlugRouteImport } from './routes/works.$slug'
+import { Route as JournalSlugRouteImport } from './routes/journal.$slug'
 import { Route as CheckoutSuccessRouteImport } from './routes/checkout.success'
 import { Route as ArtistsSlugRouteImport } from './routes/artists.$slug'
 
@@ -32,6 +34,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const JournalIndexRoute = JournalIndexRouteImport.update({
+  id: '/journal/',
+  path: '/journal/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ArtistsIndexRoute = ArtistsIndexRouteImport.update({
   id: '/artists/',
   path: '/artists/',
@@ -40,6 +47,11 @@ const ArtistsIndexRoute = ArtistsIndexRouteImport.update({
 const WorksSlugRoute = WorksSlugRouteImport.update({
   id: '/works/$slug',
   path: '/works/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalSlugRoute = JournalSlugRouteImport.update({
+  id: '/journal/$slug',
+  path: '/journal/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CheckoutSuccessRoute = CheckoutSuccessRouteImport.update({
@@ -59,8 +71,10 @@ export interface FileRoutesByFullPath {
   '/collections': typeof CollectionsRoute
   '/artists/$slug': typeof ArtistsSlugRoute
   '/checkout/success': typeof CheckoutSuccessRoute
+  '/journal/$slug': typeof JournalSlugRoute
   '/works/$slug': typeof WorksSlugRoute
   '/artists/': typeof ArtistsIndexRoute
+  '/journal/': typeof JournalIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -68,8 +82,10 @@ export interface FileRoutesByTo {
   '/collections': typeof CollectionsRoute
   '/artists/$slug': typeof ArtistsSlugRoute
   '/checkout/success': typeof CheckoutSuccessRoute
+  '/journal/$slug': typeof JournalSlugRoute
   '/works/$slug': typeof WorksSlugRoute
   '/artists': typeof ArtistsIndexRoute
+  '/journal': typeof JournalIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -78,8 +94,10 @@ export interface FileRoutesById {
   '/collections': typeof CollectionsRoute
   '/artists/$slug': typeof ArtistsSlugRoute
   '/checkout/success': typeof CheckoutSuccessRoute
+  '/journal/$slug': typeof JournalSlugRoute
   '/works/$slug': typeof WorksSlugRoute
   '/artists/': typeof ArtistsIndexRoute
+  '/journal/': typeof JournalIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -89,8 +107,10 @@ export interface FileRouteTypes {
     | '/collections'
     | '/artists/$slug'
     | '/checkout/success'
+    | '/journal/$slug'
     | '/works/$slug'
     | '/artists/'
+    | '/journal/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -98,8 +118,10 @@ export interface FileRouteTypes {
     | '/collections'
     | '/artists/$slug'
     | '/checkout/success'
+    | '/journal/$slug'
     | '/works/$slug'
     | '/artists'
+    | '/journal'
   id:
     | '__root__'
     | '/'
@@ -107,8 +129,10 @@ export interface FileRouteTypes {
     | '/collections'
     | '/artists/$slug'
     | '/checkout/success'
+    | '/journal/$slug'
     | '/works/$slug'
     | '/artists/'
+    | '/journal/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -116,8 +140,10 @@ export interface RootRouteChildren {
   CheckoutRoute: typeof CheckoutRouteWithChildren
   CollectionsRoute: typeof CollectionsRoute
   ArtistsSlugRoute: typeof ArtistsSlugRoute
+  JournalSlugRoute: typeof JournalSlugRoute
   WorksSlugRoute: typeof WorksSlugRoute
   ArtistsIndexRoute: typeof ArtistsIndexRoute
+  JournalIndexRoute: typeof JournalIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -143,6 +169,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/journal/': {
+      id: '/journal/'
+      path: '/journal'
+      fullPath: '/journal/'
+      preLoaderRoute: typeof JournalIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/artists/': {
       id: '/artists/'
       path: '/artists'
@@ -155,6 +188,13 @@ declare module '@tanstack/react-router' {
       path: '/works/$slug'
       fullPath: '/works/$slug'
       preLoaderRoute: typeof WorksSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal/$slug': {
+      id: '/journal/$slug'
+      path: '/journal/$slug'
+      fullPath: '/journal/$slug'
+      preLoaderRoute: typeof JournalSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/checkout/success': {
@@ -191,8 +231,10 @@ const rootRouteChildren: RootRouteChildren = {
   CheckoutRoute: CheckoutRouteWithChildren,
   CollectionsRoute: CollectionsRoute,
   ArtistsSlugRoute: ArtistsSlugRoute,
+  JournalSlugRoute: JournalSlugRoute,
   WorksSlugRoute: WorksSlugRoute,
   ArtistsIndexRoute: ArtistsIndexRoute,
+  JournalIndexRoute: JournalIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
