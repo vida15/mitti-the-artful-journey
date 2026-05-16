@@ -4,18 +4,18 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* MITTI design system — cinematic dark editorial */
+/* MITTI design system — Glow palette (floral, deep botanical) */
 
 @theme inline {
-  --color-void: #0A0907;
-  --color-bone: #E8E0D4;
-  --color-ember: #D4521A;
-  --color-ochre: #C89B3C;
-  --color-dust: #7A6A58;
-  --color-ash: #1E1A16;
-  --color-flare: #FF6B2B;
-  --color-paper: #F2EDE6;
-  --color-ink: #120F0B;
+  --color-void: #283933;       /* deep botanical green — base */
+  --color-ink: #1a2622;        /* darker ink */
+  --color-ash: #546144;        /* moss surface */
+  --color-bone: #F2D5BA;       /* warm cream — foreground */
+  --color-paper: #F2D5BA;
+  --color-ember: #A54F5E;      /* deep rose — primary */
+  --color-flare: #D68687;      /* blush — accent hover */
+  --color-ochre: #E88E46;      /* warm orange — secondary accent */
+  --color-dust: #BEBD95;       /* sage — muted */
 
   --font-display: "Bebas Neue", sans-serif;
   --font-editorial: "Playfair Display", serif;
@@ -67,25 +67,25 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #0A0907;
-  --foreground: #E8E0D4;
-  --card: #1E1A16;
-  --card-foreground: #E8E0D4;
-  --popover: #1E1A16;
-  --popover-foreground: #E8E0D4;
-  --primary: #D4521A;
-  --primary-foreground: #0A0907;
-  --secondary: #1E1A16;
-  --secondary-foreground: #E8E0D4;
-  --muted: #1E1A16;
-  --muted-foreground: #7A6A58;
-  --accent: #C89B3C;
-  --accent-foreground: #0A0907;
+  --background: #283933;
+  --foreground: #F2D5BA;
+  --card: #546144;
+  --card-foreground: #F2D5BA;
+  --popover: #546144;
+  --popover-foreground: #F2D5BA;
+  --primary: #A54F5E;
+  --primary-foreground: #F2D5BA;
+  --secondary: #546144;
+  --secondary-foreground: #F2D5BA;
+  --muted: #546144;
+  --muted-foreground: #BEBD95;
+  --accent: #E88E46;
+  --accent-foreground: #283933;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: #1E1A16;
-  --input: #1E1A16;
-  --ring: #D4521A;
+  --border: #546144;
+  --input: #546144;
+  --ring: #A54F5E;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -187,11 +187,11 @@
 .hero-conic {
   background: conic-gradient(
     from var(--grad-angle),
-    #0A0907 0%,
-    #1A1208 25%,
-    rgba(212, 82, 26, 0.08) 50%,
-    rgba(200, 155, 60, 0.06) 75%,
-    #0A0907 100%
+    #283933 0%,
+    #1a2622 25%,
+    rgba(165, 79, 94, 0.12) 50%,
+    rgba(232, 142, 70, 0.08) 75%,
+    #283933 100%
   );
   animation: gradient-spin 20s linear infinite;
 }
