@@ -12,10 +12,12 @@
   --color-ash: #546144;        /* moss surface */
   --color-bone: #F2D5BA;       /* warm cream — foreground */
   --color-paper: #F2D5BA;
-  --color-ember: #A54F5E;      /* deep rose — primary */
-  --color-flare: #D68687;      /* blush — accent hover */
-  --color-ochre: #E88E46;      /* warm orange — secondary accent */
+  --color-ember: #E2425A;      /* vivid rose — primary */
+  --color-flare: #FF8FA3;      /* hot blush — accent hover */
+  --color-ochre: #FFA235;      /* bright marigold — secondary accent */
   --color-dust: #BEBD95;       /* sage — muted */
+  --color-electric: #34D6C1;   /* electric mint — pop accent */
+  --color-violet: #8C6BE6;     /* iris violet — pop accent */
 
   --font-display: "Bebas Neue", sans-serif;
   --font-editorial: "Playfair Display", serif;
