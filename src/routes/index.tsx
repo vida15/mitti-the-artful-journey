@@ -11,6 +11,10 @@ import { Stats } from "@/components/home/Stats";
 import { Manifesto } from "@/components/home/Manifesto";
 import { Testimonials } from "@/components/home/Testimonials";
 import { Newsletter } from "@/components/home/Newsletter";
+import { Process } from "@/components/home/Process";
+import { VideoReel } from "@/components/home/VideoReel";
+import { JournalTeaser } from "@/components/home/JournalTeaser";
+import { PressStrip } from "@/components/home/PressStrip";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -23,6 +27,8 @@ function Index() {
   });
   const products = data?.products ?? [];
   const testimonials = data?.testimonials ?? [];
+  const journal = data?.journal ?? [];
+  const press = data?.press ?? [];
 
   return (
     <>
@@ -33,7 +39,11 @@ function Index() {
       <FeaturedWorks products={products} />
       <ArtistFeature />
       <Stats />
+      <Process />
+      <VideoReel />
       <Manifesto />
+      <JournalTeaser posts={journal} />
+      <PressStrip items={press} />
       <Testimonials items={testimonials} />
       <Newsletter />
     </>

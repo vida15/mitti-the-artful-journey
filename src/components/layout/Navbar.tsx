@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const links = [
   { to: "/collections", label: "Collections" },
   { to: "/artists", label: "Artists" },
-  { to: "/collections", label: "Objects" },
+  { to: "/journal", label: "Journal" },
 ] as const;
 
 export function Navbar() {
