@@ -30,7 +30,7 @@ export function Hero() {
           animate={{ y: [-20, 20] }}
           transition={{ duration: 8, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
           className="font-display select-none leading-none"
-          style={{ fontSize: "clamp(280px, 30vw, 420px)", color: "rgba(232,224,212,0.04)" }}
+          style={{ fontSize: "clamp(280px, 30vw, 420px)", color: "rgba(42,38,34,0.06)" }}
         >
           ART
         </motion.span>
@@ -63,7 +63,7 @@ export function Hero() {
           — 01 / Welcome to MITTI
         </motion.p>
 
-        <h1 className="mt-6 font-editorial italic font-bold leading-[0.95]" style={{ fontSize: "clamp(64px, 8vw, 112px)", color: "var(--color-bone)" }}>
+        <h1 className="mt-6 font-editorial leading-[1.02]" style={{ fontSize: "clamp(56px, 8vw, 80px)", color: "#2A2622", fontWeight: 300, letterSpacing: "0.02em" }}>
           {["Objects", "with a", "Soul."].map((w, i) => (
             <span key={i} className="block overflow-hidden">
               <motion.span
@@ -82,8 +82,8 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.95 }}
-          className="mt-8 max-w-md text-lg"
-          style={{ color: "var(--color-dust)" }}
+          className="mt-8 max-w-md"
+          style={{ color: "#6B5E52", fontSize: "0.9rem", letterSpacing: "0.1em" }}
         >
           2,400 works. 94 artists. Zero compromises.
         </motion.p>
@@ -98,12 +98,9 @@ export function Hero() {
             ref={ctaRef}
             href="/collections"
             data-cursor="link"
-            className="group relative font-editorial italic text-2xl transition-colors duration-300 hover:text-[var(--color-ember)]"
-            style={{ color: "var(--color-bone)" }}
+            className="cta-outline"
           >
             Explore the Collection
-            <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-2">→</span>
-            <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100" style={{ backgroundColor: "var(--color-ember)" }} />
           </a>
           <a
             href="/artists"
