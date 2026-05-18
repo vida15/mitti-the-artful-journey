@@ -9,7 +9,7 @@ export function ArtistFeature() {
     "Her panels carry the weight of monsoon water and the patience of the loom.",
   ];
   return (
-    <section className="relative grid min-h-[100vh] grid-cols-1 md:grid-cols-[40%_60%]">
+    <section className="relative grid min-h-[100vh] grid-cols-1 md:grid-cols-[40%_60%]" style={{ backgroundColor: "#E6DED2" }}>
       <div className="relative h-[60vh] md:h-auto">
         <motion.div
           initial={{ clipPath: "inset(100% 0 0 0)" }}
@@ -19,18 +19,18 @@ export function ArtistFeature() {
           className="absolute inset-0"
           style={{ clipPath: "polygon(0 0, 90% 0, 100% 100%, 0% 100%)" }}
         >
-          <img src={placeholder("Asha Naik", 800, 1200, 3)} alt="Asha Naik" className="h-full w-full object-cover grayscale" />
+          <img src={placeholder("Asha Naik", 800, 1200, 3)} alt="Asha Naik" className="h-full w-full object-cover" />
         </motion.div>
       </div>
       <div className="flex items-center px-8 py-20 md:px-16">
         <div className="max-w-xl">
-          <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>
+          <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "#A54F5E" }}>
             Artist Feature — 001
           </p>
-          <p className="mt-8 font-editorial italic leading-snug" style={{ fontSize: "clamp(26px, 3vw, 42px)", color: "var(--color-bone)" }}>
+          <p className="mt-8 font-editorial italic leading-snug" style={{ fontSize: "1.5rem", color: "#2A2622" }}>
             "I don't make art for walls. I make it for the people who live with it."
           </p>
-          <div className="mt-10 space-y-4 text-base" style={{ color: "var(--color-dust)" }}>
+          <div className="mt-10 space-y-4 text-base" style={{ color: "#6B5E52" }}>
             {sentences.map((s, i) => (
               <motion.p
                 key={i}
@@ -44,12 +44,12 @@ export function ArtistFeature() {
             ))}
           </div>
           <div className="mt-10">
-            <div className="mb-2 h-px w-12" style={{ backgroundColor: "var(--color-ochre)" }} />
-            <h3 className="font-display text-5xl tracking-wide" style={{ color: "var(--color-ember)" }}>
+            <div className="mb-2 h-px w-12" style={{ backgroundColor: "#E88E46" }} />
+            <h3 className="font-body text-sm uppercase" style={{ color: "#2A2622", letterSpacing: "0.18em", fontVariant: "small-caps" }}>
               Asha Naik
             </h3>
           </div>
-          <Link to="/artists" data-cursor="link" className="mt-8 inline-block font-mono text-xs uppercase tracking-widest hover:text-[var(--color-bone)]" style={{ color: "var(--color-dust)" }}>
+          <Link to="/artists" data-cursor="link" className="mt-8 inline-block font-mono text-xs uppercase tracking-widest hover:text-[#A54F5E]" style={{ color: "#6B5E52" }}>
             View all works →
           </Link>
         </div>
