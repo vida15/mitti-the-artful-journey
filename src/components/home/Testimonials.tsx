@@ -14,7 +14,7 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
   const t = items[i];
 
   return (
-    <section className="relative flex min-h-[80vh] items-center justify-center px-6 py-24" style={{ backgroundColor: "#000" }}>
+    <section className="relative flex min-h-[80vh] items-center justify-center px-6 py-24" style={{ backgroundColor: "var(--color-ink)" }}>
       <span className="absolute right-8 top-8 font-mono text-xs uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>
         {String(i + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
       </span>

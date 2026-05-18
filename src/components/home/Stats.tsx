@@ -13,12 +13,12 @@ function Stat({ s }: { s: StatItem }) {
   const display = s.float ? (v / 10).toFixed(1) : v.toLocaleString("en-IN");
   return (
     <div className="flex flex-col items-start px-6 py-10">
-      <span ref={ref} className="font-display leading-none" style={{ fontSize: "clamp(48px, 6vw, 88px)", color: "var(--color-ember)" }}>
+      <span ref={ref} className="font-editorial leading-none" style={{ fontSize: "clamp(48px, 6vw, 88px)", color: "#A54F5E", fontWeight: 400, letterSpacing: "0.02em" }}>
         {s.prefix ?? ""}
         {display}
         {s.suffix}
       </span>
-      <span className="mt-3 font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>
+      <span className="mt-3 font-body text-[11px] uppercase" style={{ color: "#6B5E52", letterSpacing: "0.08em" }}>
         {s.label}
       </span>
     </div>

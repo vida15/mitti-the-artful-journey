@@ -14,10 +14,10 @@ const blocks = [
 export function Categories() {
   return (
     <section className="relative px-6 py-32 md:px-10 md:py-48">
-      <div className="pointer-events-none absolute inset-x-0 top-20 select-none text-center font-display leading-none" style={{ fontSize: "clamp(80px, 14vw, 180px)", color: "rgba(232,224,212,0.05)" }}>
-        COLLECTIONS
+      <div className="pointer-events-none absolute inset-x-0 top-20 select-none text-center font-editorial italic leading-none" style={{ fontSize: "clamp(80px, 14vw, 180px)", color: "rgba(42,38,34,0.06)" }}>
+        Collections
       </div>
-      <p className="relative mb-16 text-center font-editorial italic" style={{ fontSize: "clamp(28px, 3vw, 48px)", color: "var(--color-bone)" }}>
+      <p className="relative mb-16 text-center font-editorial italic" style={{ fontSize: "clamp(28px, 3vw, 48px)", color: "#2A2622" }}>
         Browse by medium.
       </p>
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-7">
@@ -38,11 +38,11 @@ export function Categories() {
               alt={b.name}
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
             />
-            <div className="absolute inset-x-0 bottom-0 translate-y-full p-6 transition-transform duration-500 group-hover:translate-y-0" style={{ backgroundColor: "rgba(10,9,7,0.85)" }}>
-              <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>
+            <div className="absolute inset-x-0 bottom-0 translate-y-full p-6 transition-transform duration-500 group-hover:translate-y-0" style={{ backgroundColor: "rgba(42,38,34,0.92)" }}>
+              <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "#E88E46" }}>
                 Open ↗
               </p>
-              <h3 className="font-display text-4xl tracking-wide" style={{ color: "var(--color-bone)" }}>
+              <h3 className="font-editorial italic text-3xl" style={{ color: "#F3EEE7" }}>
                 {b.name}
               </h3>
             </div>

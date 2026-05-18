@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 const items = [
-  "HANDMADE",
-  "AUTHENTIC",
-  "ARTIST-DIRECT",
-  "94 MAKERS",
-  "28 ORIGINS",
-  "ZERO MASS PRODUCTION",
+  "Handmade",
+  "Authentic",
+  "Artist-direct",
+  "94 makers",
+  "28 origins",
+  "Zero mass production",
 ];
 
 export function Marquee() {
@@ -21,13 +21,13 @@ export function Marquee() {
       <div
         className="absolute inset-y-0 flex items-center whitespace-nowrap"
         style={{
-          animation: `marquee ${fast ? 12 : 36}s linear infinite`,
+          animation: `marquee ${fast ? 24 : 72}s linear infinite`,
         }}
       >
         {[...Array(2)].map((_, dup) => (
           <div key={dup} className="flex items-center">
             {items.map((t, i) => (
-              <span key={`${dup}-${i}`} className="font-display text-3xl tracking-wide" style={{ color: "var(--color-void)" }}>
+              <span key={`${dup}-${i}`} className="font-editorial italic text-2xl" style={{ color: "#F3EEE7" }}>
                 <span className="mx-12">{t}</span>
                 <span>·</span>
               </span>
