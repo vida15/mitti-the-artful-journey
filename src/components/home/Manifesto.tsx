@@ -11,7 +11,7 @@ export function Manifesto() {
   const progress = useTransform(scrollYProgress, [0.15, 0.75], [0, words.length]);
 
   return (
-    <section ref={ref} style={{ height: "300vh", backgroundColor: "#000" }}>
+    <section ref={ref} style={{ height: "300vh", backgroundColor: "#2A2622" }}>
       <div className="sticky top-0 flex h-[100vh] items-center justify-center px-6">
         <p className="max-w-3xl text-center font-editorial italic leading-[1.4]" style={{ fontSize: "clamp(24px, 3.5vw, 48px)" }}>
           {words.map((w, i) => (
@@ -35,6 +35,6 @@ export function Manifesto() {
 
 function Word({ index, progress, children }: { index: number; progress: import("framer-motion").MotionValue<number>; children: React.ReactNode }) {
   const opacity = useTransform(progress, [index, index + 0.5], [0.15, 1]);
-  const color = useTransform(opacity, (o) => `rgba(232, 224, 212, ${o})`);
+  const color = useTransform(opacity, (o) => `rgba(243, 238, 231, ${o})`);
   return <motion.span style={{ color }}>{children}</motion.span>;
 }

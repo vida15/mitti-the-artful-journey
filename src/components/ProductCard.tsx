@@ -31,7 +31,7 @@ export function ProductCard({ p, wide = false }: { p: Product; wide?: boolean })
       to="/works/$slug"
       params={{ slug: p.slug }}
       data-cursor="view"
-      className={`group relative block overflow-hidden ${wide ? "md:col-span-2" : ""}`}
+      className={`group relative block overflow-hidden border border-transparent transition-colors duration-[400ms] hover:border-[#D4C9BC] ${wide ? "md:col-span-2" : ""}`}
       style={{ height: 480 }}
     >
       <div className="relative h-[80%] overflow-hidden">
@@ -44,7 +44,7 @@ export function ProductCard({ p, wide = false }: { p: Product; wide?: boolean })
           onClick={handleAdd}
           aria-label="Add to cart"
           className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center font-mono text-base transition-colors"
-          style={{ backgroundColor: "rgba(10,9,7,0.7)", color: "var(--color-bone)" }}
+          style={{ backgroundColor: "#2A2622", color: "#F3EEE7" }}
         >
           <motion.span key={added ? "y" : "n"} initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}>
             {added ? "✓" : "+"}
@@ -53,12 +53,12 @@ export function ProductCard({ p, wide = false }: { p: Product; wide?: boolean })
       </div>
       <div
         className="relative h-[20%] overflow-hidden px-4 py-3 transition-all duration-500 group-hover:h-[40%] group-hover:-translate-y-[20%]"
-        style={{ backgroundColor: "var(--color-ash)" }}
+        style={{ backgroundColor: "#E6DED2" }}
       >
         <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>
           {p.artists?.name ?? "Unknown"} · {p.medium ?? p.category}
         </p>
-        <p className="mt-1 font-editorial italic text-base leading-tight" style={{ color: "var(--color-bone)" }}>
+        <p className="mt-1 font-editorial italic text-lg leading-tight" style={{ color: "#2A2622" }}>
           {p.title}
         </p>
         <p className="mt-1 font-mono text-xs" style={{ color: "var(--color-ochre)" }}>
@@ -70,8 +70,7 @@ export function ProductCard({ p, wide = false }: { p: Product; wide?: boolean })
       </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 -bottom-2 h-2 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        style={{ boxShadow: "0 20px 60px rgba(212,82,26,0.25)" }}
+        className="pointer-events-none absolute inset-x-0 -bottom-2 h-2 opacity-0"
       />
     </Link>
   );
