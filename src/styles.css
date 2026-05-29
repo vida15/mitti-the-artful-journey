@@ -189,11 +189,11 @@
 .hero-conic {
   background: conic-gradient(
     from var(--grad-angle),
-    #2C2C2A 0%,
-    #1F1F1D 25%,
-    rgba(93, 114, 88, 0.18) 50%,
-    rgba(125, 157, 168, 0.14) 75%,
-    #2C2C2A 100%
+    #7D9DA8 0%,
+    #8FB0BB 25%,
+    #5A7A85 50%,
+    #6E8F9A 75%,
+    #7D9DA8 100%
   );
   animation: gradient-spin 20s linear infinite;
 }
