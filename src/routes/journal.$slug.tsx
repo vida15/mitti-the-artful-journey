@@ -16,13 +16,13 @@ function JournalPostPage() {
   if (!p) return (
     <div className="flex min-h-[60vh] flex-col items-center justify-center gap-6">
       <p className="font-display text-5xl" style={{ color: "var(--color-bone)" }}>Entry not found</p>
-      <Link to="/journal" className="font-mono text-xs uppercase underline" style={{ color: "var(--color-ember)" }}>← Journal</Link>
+      <Link to="/journal" className="font-mono text-xs uppercase underline" style={{ color: "var(--color-bone)" }}>← Journal</Link>
     </div>
   );
 
   return (
     <article className="mx-auto max-w-3xl px-6 py-16 md:py-24">
-      <Link to="/journal" data-cursor="link" className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>← Journal</Link>
+      <Link to="/journal" data-cursor="link" className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-bone)" }}>← Journal</Link>
       <p className="mt-6 font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>{p.author ?? "Editorial"} · {new Date(p.published_at).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</p>
       <h1 className="mt-4 font-editorial italic leading-[1.05]" style={{ fontSize: "clamp(40px, 6vw, 88px)", color: "var(--color-bone)" }}>{p.title}</h1>
       {p.excerpt && <p className="mt-6 font-editorial italic text-xl md:text-2xl" style={{ color: "var(--color-dust)" }}>{p.excerpt}</p>}

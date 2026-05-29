@@ -35,7 +35,7 @@ function JournalIndex() {
               <div className="overflow-hidden">
                 <img src={p.cover_url ?? placeholder(p.title, 800, 1000, i)} alt={p.title} className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]" />
               </div>
-              <p className="mt-5 font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>{p.author ?? "Editorial"} · {new Date(p.published_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</p>
+              <p className="mt-5 font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-bone)" }}>{p.author ?? "Editorial"} · {new Date(p.published_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</p>
               <h3 className="mt-2 font-editorial italic text-2xl md:text-3xl" style={{ color: "var(--color-bone)" }}>{p.title}</h3>
               <p className="mt-2 text-sm" style={{ color: "var(--color-dust)" }}>{p.excerpt}</p>
             </Link>

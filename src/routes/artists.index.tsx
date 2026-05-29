@@ -52,7 +52,7 @@ function ArtistsPage() {
           <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>The Hands</p>
           <h1 className="mt-4 font-editorial italic leading-[0.95]" style={{ fontSize: "clamp(64px, 11vw, 180px)", color: "var(--color-bone)" }}>
             <span className="block">94 hands.</span>
-            <span className="block" style={{ color: "var(--color-ember)" }}>28 origins.</span>
+            <span className="block" style={{ color: "var(--color-bone)" }}>28 origins.</span>
             <span className="block">One ground.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg" style={{ color: "var(--color-dust)" }}>
@@ -126,7 +126,7 @@ function ArtistsPage() {
                 />
               </Link>
               <div className="flex flex-col">
-                <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>
+                <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-bone)" }}>
                   {a.origin ?? "India"} · {works.length} {works.length === 1 ? "work" : "works"}
                 </p>
                 <Link to="/artists/$slug" params={{ slug: a.slug }} data-cursor="link" className="mt-2 font-editorial italic text-3xl md:text-4xl hover:text-[var(--color-ember)] transition-colors" style={{ color: "var(--color-bone)" }}>
@@ -142,7 +142,7 @@ function ArtistsPage() {
                     </Link>
                   ))}
                 </div>
-                <Link to="/artists/$slug" params={{ slug: a.slug }} data-cursor="link" className="mt-5 font-mono text-[10px] uppercase tracking-widest underline-offset-8 hover:underline" style={{ color: "var(--color-ember)" }}>
+                <Link to="/artists/$slug" params={{ slug: a.slug }} data-cursor="link" className="mt-5 font-mono text-[10px] uppercase tracking-widest underline-offset-8 hover:underline" style={{ color: "var(--color-bone)" }}>
                   View studio →
                 </Link>
               </div>
@@ -156,7 +156,7 @@ function ArtistsPage() {
         <p className="mx-auto max-w-3xl font-editorial italic" style={{ fontSize: "clamp(28px, 4vw, 52px)", color: "var(--color-bone)" }}>
           "The hand that made this piece is the only algorithm we trust."
         </p>
-        <p className="mt-6 font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>— MITTI Editorial</p>
+        <p className="mt-6 font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-bone)" }}>— MITTI Editorial</p>
       </div>
     </div>
   );

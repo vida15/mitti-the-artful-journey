@@ -24,7 +24,7 @@ export function ArtistFeature() {
       </div>
       <div className="flex items-center px-8 py-20 md:px-16">
         <div className="max-w-xl">
-          <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>
+          <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-bone)" }}>
             Artist Feature — 001
           </p>
           <p className="mt-8 font-editorial italic leading-snug" style={{ fontSize: "clamp(26px, 3vw, 42px)", color: "var(--color-bone)" }}>
@@ -45,7 +45,7 @@ export function ArtistFeature() {
           </div>
           <div className="mt-10">
             <div className="mb-2 h-px w-12" style={{ backgroundColor: "var(--color-ochre)" }} />
-            <h3 className="font-display text-5xl tracking-wide" style={{ color: "var(--color-ember)" }}>
+            <h3 className="font-display text-5xl tracking-wide" style={{ color: "var(--color-bone)" }}>
               Asha Naik
             </h3>
           </div>

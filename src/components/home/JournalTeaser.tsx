@@ -16,7 +16,7 @@ export function JournalTeaser({ posts }: { posts: JournalPost[] }) {
               From the studio.
             </h2>
           </div>
-          <Link to="/journal" data-cursor="link" className="font-mono text-[11px] uppercase tracking-widest underline-offset-8 hover:underline" style={{ color: "var(--color-ochre)" }}>
+          <Link to="/journal" data-cursor="link" className="font-mono text-[11px] uppercase tracking-widest underline-offset-8 hover:underline" style={{ color: "var(--color-bone)" }}>
             All entries ↗
           </Link>
         </div>
@@ -25,7 +25,7 @@ export function JournalTeaser({ posts }: { posts: JournalPost[] }) {
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="overflow-hidden">
               <img src={lead.cover_url ?? placeholder(lead.title, 1200, 800, 1)} alt={lead.title} className="aspect-[3/2] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
             </motion.div>
-            <p className="mt-5 font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>{lead.author ?? "Editorial"}</p>
+            <p className="mt-5 font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-bone)" }}>{lead.author ?? "Editorial"}</p>
             <h3 className="mt-2 font-editorial italic text-3xl md:text-4xl" style={{ color: "var(--color-bone)" }}>{lead.title}</h3>
             <p className="mt-3 text-base" style={{ color: "var(--color-dust)" }}>{lead.excerpt}</p>
           </Link>
@@ -36,7 +36,7 @@ export function JournalTeaser({ posts }: { posts: JournalPost[] }) {
                   <img src={p.cover_url ?? placeholder(p.title, 600, 600, i + 2)} alt={p.title} className="aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]" />
                 </div>
                 <div>
-                  <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>{p.author ?? "Editorial"}</p>
+                  <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-bone)" }}>{p.author ?? "Editorial"}</p>
                   <h3 className="mt-2 font-editorial italic text-xl md:text-2xl" style={{ color: "var(--color-bone)" }}>{p.title}</h3>
                   <p className="mt-2 text-sm line-clamp-2" style={{ color: "var(--color-dust)" }}>{p.excerpt}</p>
                 </div>

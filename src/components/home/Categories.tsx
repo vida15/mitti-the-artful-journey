@@ -39,7 +39,7 @@ export function Categories() {
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
             />
             <div className="absolute inset-x-0 bottom-0 translate-y-full p-6 transition-transform duration-500 group-hover:translate-y-0" style={{ backgroundColor: "rgba(15,79,122,0.85)" }}>
-              <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>
+              <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-bone)" }}>
                 Open ↗
               </p>
               <h3 className="font-display text-4xl tracking-wide" style={{ color: "var(--color-bone)" }}>

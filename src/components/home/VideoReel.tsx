@@ -18,7 +18,7 @@ export function VideoReel() {
         ))}
       </div>
       <motion.div style={{ opacity }} className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-        <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>— 05 / Reel</p>
+        <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-bone)" }}>— 05 / Reel</p>
         <h2 className="mt-4 max-w-4xl font-editorial italic leading-[1.05]" style={{ fontSize: "clamp(48px, 7vw, 112px)", color: "var(--color-bone)" }}>
           The hand is the algorithm.
         </h2>

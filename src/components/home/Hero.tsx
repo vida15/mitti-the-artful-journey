@@ -58,7 +58,7 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="font-mono text-[11px] uppercase tracking-[0.15em]"
-          style={{ color: "var(--color-ochre)" }}
+          style={{ color: "var(--color-bone)" }}
         >
           — 01 / Welcome to MITTI
         </motion.p>

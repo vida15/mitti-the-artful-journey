@@ -21,7 +21,7 @@ function ArtistPage() {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-6">
         <p className="font-display text-5xl" style={{ color: "var(--color-bone)" }}>Artist not found</p>
-        <Link to="/artists" className="font-mono text-xs uppercase underline" style={{ color: "var(--color-ember)" }}>← All artists</Link>
+        <Link to="/artists" className="font-mono text-xs uppercase underline" style={{ color: "var(--color-bone)" }}>← All artists</Link>
       </div>
     );
   }
@@ -41,7 +41,7 @@ function ArtistPage() {
           <div className="mt-10 grid grid-cols-3 gap-4 border-t pt-6" style={{ borderColor: "rgba(251,183,40,0.2)" }}>
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>Works</p>
-              <p className="mt-1 font-display text-3xl" style={{ color: "var(--color-ember)" }}>{(data?.works ?? []).length}</p>
+              <p className="mt-1 font-display text-3xl" style={{ color: "var(--color-bone)" }}>{(data?.works ?? []).length}</p>
             </div>
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>Origin</p>
@@ -49,7 +49,7 @@ function ArtistPage() {
             </div>
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>Status</p>
-              <p className="mt-1 font-editorial italic text-lg" style={{ color: "var(--color-ochre)" }}>Accepting</p>
+              <p className="mt-1 font-editorial italic text-lg" style={{ color: "var(--color-bone)" }}>Accepting</p>
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@ function ArtistPage() {
         ))}
       </div>
       <div className="mt-20 text-center">
-        <Link to="/artists" data-cursor="link" className="font-mono text-[11px] uppercase tracking-widest underline-offset-8 hover:underline" style={{ color: "var(--color-ochre)" }}>
+        <Link to="/artists" data-cursor="link" className="font-mono text-[11px] uppercase tracking-widest underline-offset-8 hover:underline" style={{ color: "var(--color-bone)" }}>
           ← All artists
         </Link>
       </div>
