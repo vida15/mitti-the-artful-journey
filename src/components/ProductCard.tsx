@@ -44,7 +44,7 @@ export function ProductCard({ p, wide = false }: { p: Product; wide?: boolean })
           onClick={handleAdd}
           aria-label="Add to cart"
           className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center font-mono text-base transition-colors"
-          style={{ backgroundColor: "rgba(10,9,7,0.7)", color: "var(--color-bone)" }}
+          style={{ backgroundColor: "rgba(36,54,65,0.7)", color: "var(--color-bone)" }}
         >
           <motion.span key={added ? "y" : "n"} initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}>
             {added ? "✓" : "+"}
@@ -71,7 +71,7 @@ export function ProductCard({ p, wide = false }: { p: Product; wide?: boolean })
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 -bottom-2 h-2 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        style={{ boxShadow: "0 20px 60px rgba(212,82,26,0.25)" }}
+        style={{ boxShadow: "0 20px 60px rgba(248,146,84,0.25)" }}
       />
     </Link>
   );

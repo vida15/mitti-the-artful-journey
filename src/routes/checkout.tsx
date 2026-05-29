@@ -67,18 +67,18 @@ function Checkout() {
 
         <fieldset className="space-y-5">
           <legend className="mb-3 font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>Contact</legend>
-          <input className={input} style={{ borderColor: "rgba(122,106,88,0.4)", color: "var(--color-bone)" }} placeholder="Email" type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+          <input className={input} style={{ borderColor: "rgba(59,88,103,0.4)", color: "var(--color-bone)" }} placeholder="Email" type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
         </fieldset>
 
         <fieldset className="space-y-5">
           <legend className="mb-3 font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>Shipping</legend>
-          <input className={input} style={{ borderColor: "rgba(122,106,88,0.4)", color: "var(--color-bone)" }} placeholder="Full name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-          <input className={input} style={{ borderColor: "rgba(122,106,88,0.4)", color: "var(--color-bone)" }} placeholder="Address" required value={form.line1} onChange={(e) => setForm({ ...form, line1: e.target.value })} />
+          <input className={input} style={{ borderColor: "rgba(59,88,103,0.4)", color: "var(--color-bone)" }} placeholder="Full name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
+          <input className={input} style={{ borderColor: "rgba(59,88,103,0.4)", color: "var(--color-bone)" }} placeholder="Address" required value={form.line1} onChange={(e) => setForm({ ...form, line1: e.target.value })} />
           <div className="grid grid-cols-2 gap-5">
-            <input className={input} style={{ borderColor: "rgba(122,106,88,0.4)", color: "var(--color-bone)" }} placeholder="City" required value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })} />
-            <input className={input} style={{ borderColor: "rgba(122,106,88,0.4)", color: "var(--color-bone)" }} placeholder="PIN" required value={form.pincode} onChange={(e) => setForm({ ...form, pincode: e.target.value })} />
+            <input className={input} style={{ borderColor: "rgba(59,88,103,0.4)", color: "var(--color-bone)" }} placeholder="City" required value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })} />
+            <input className={input} style={{ borderColor: "rgba(59,88,103,0.4)", color: "var(--color-bone)" }} placeholder="PIN" required value={form.pincode} onChange={(e) => setForm({ ...form, pincode: e.target.value })} />
           </div>
-          <input className={input} style={{ borderColor: "rgba(122,106,88,0.4)", color: "var(--color-bone)" }} placeholder="Country" required value={form.country} onChange={(e) => setForm({ ...form, country: e.target.value })} />
+          <input className={input} style={{ borderColor: "rgba(59,88,103,0.4)", color: "var(--color-bone)" }} placeholder="Country" required value={form.country} onChange={(e) => setForm({ ...form, country: e.target.value })} />
         </fieldset>
 
         <fieldset>
@@ -92,7 +92,7 @@ function Checkout() {
                 data-cursor="link"
                 className="border px-4 py-4 text-left font-mono text-[11px] uppercase tracking-widest"
                 style={{
-                  borderColor: method === m ? "var(--color-ember)" : "rgba(122,106,88,0.4)",
+                  borderColor: method === m ? "var(--color-ember)" : "rgba(59,88,103,0.4)",
                   color: method === m ? "var(--color-ember)" : "var(--color-bone)",
                 }}
               >
@@ -119,7 +119,7 @@ function Checkout() {
       </form>
 
       <aside className="md:sticky md:top-[80px] md:self-start">
-        <div className="border p-6" style={{ borderColor: "rgba(122,106,88,0.3)" }}>
+        <div className="border p-6" style={{ borderColor: "rgba(59,88,103,0.3)" }}>
           <p className="mb-6 font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>Order</p>
           <ul className="space-y-4">
             {items.map((i) => (
@@ -132,7 +132,7 @@ function Checkout() {
               </li>
             ))}
           </ul>
-          <div className="mt-6 flex items-end justify-between border-t pt-6" style={{ borderColor: "rgba(122,106,88,0.3)" }}>
+          <div className="mt-6 flex items-end justify-between border-t pt-6" style={{ borderColor: "rgba(59,88,103,0.3)" }}>
             <span className="font-mono text-[11px] uppercase" style={{ color: "var(--color-dust)" }}>Subtotal</span>
             <span className="font-display text-3xl" style={{ color: "var(--color-bone)" }}>{formatINR(subtotal)}</span>
           </div>

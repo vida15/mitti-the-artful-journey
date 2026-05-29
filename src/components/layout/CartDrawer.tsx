@@ -30,7 +30,7 @@ export function CartDrawer() {
             className="fixed inset-y-0 right-0 z-[71] flex w-full max-w-[480px] flex-col"
             style={{ backgroundColor: "var(--color-ash)" }}
           >
-            <div className="flex items-center justify-between border-b px-8 py-6" style={{ borderColor: "rgba(122,106,88,0.3)" }}>
+            <div className="flex items-center justify-between border-b px-8 py-6" style={{ borderColor: "rgba(59,88,103,0.3)" }}>
               <h2 className="font-display text-3xl tracking-wide" style={{ color: "var(--color-bone)" }}>
                 Your Cart
               </h2>
@@ -83,7 +83,7 @@ export function CartDrawer() {
               )}
             </div>
             {items.length > 0 && (
-              <div className="border-t px-8 py-6" style={{ borderColor: "rgba(122,106,88,0.3)" }}>
+              <div className="border-t px-8 py-6" style={{ borderColor: "rgba(59,88,103,0.3)" }}>
                 <div className="mb-6 flex items-end justify-between">
                   <span className="font-mono text-[11px] uppercase" style={{ color: "var(--color-dust)" }}>
                     Subtotal

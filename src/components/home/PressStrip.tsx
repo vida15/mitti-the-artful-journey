@@ -4,7 +4,7 @@ export function PressStrip({ items }: { items: PressMention[] }) {
   if (!items || items.length === 0) return null;
   const loop = [...items, ...items];
   return (
-    <section className="border-y px-6 py-10 md:px-10" style={{ borderColor: "rgba(190,189,149,0.15)" }}>
+    <section className="border-y px-6 py-10 md:px-10" style={{ borderColor: "rgba(141,162,73,0.15)" }}>
       <p className="mb-6 text-center font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>
         As seen in
       </p>

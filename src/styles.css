@@ -7,17 +7,17 @@
 /* MITTI design system — Teesta & Tea Gardens palette */
 
 @theme inline {
-  --color-void: #7D9DA8;       /* Teesta Blue — base */
-  --color-ink: #5A7A85;        /* deeper Teesta — shadow */
-  --color-ash: #5A7A85;        /* deep Teesta — surface */
-  --color-bone: #F4F1EB;       /* Mist White — foreground */
-  --color-paper: #F4F1EB;
-  --color-ember: #5D7258;      /* Tea Leaf — primary */
-  --color-flare: #A89D90;      /* River Stone — soft hover */
-  --color-ochre: #7D9DA8;      /* Teesta Blue — secondary accent */
-  --color-dust: #A89D90;       /* River Stone — muted */
-  --color-electric: #9EB8C2;   /* lifted Teesta Blue — pop */
-  --color-violet: #8AA085;     /* lifted Tea Leaf — pop */
+  --color-void: #2E434F;       /* Limed Spruce — base */
+  --color-ink: #243641;        /* deeper Limed Spruce — shadow */
+  --color-ash: #3B5867;        /* lifted Limed Spruce — surface */
+  --color-bone: #FBE1B5;       /* Navajo White — foreground */
+  --color-paper: #FBE1B5;
+  --color-ember: #F89254;      /* Faded Orange — primary accent */
+  --color-flare: #8AA9B8;      /* Regent Blue — soft hover */
+  --color-ochre: #8DA249;      /* Asparagus — secondary accent */
+  --color-dust: #8AA9B8;       /* Regent Blue — muted */
+  --color-electric: #8DA249;   /* Asparagus — pop */
+  --color-violet: #F89254;     /* Faded Orange — pop */
 
   --font-display: "Bebas Neue", sans-serif;
   --font-editorial: "Playfair Display", serif;
@@ -69,25 +69,25 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #7D9DA8;
-  --foreground: #F4F1EB;
-  --card: #5A7A85;
-  --card-foreground: #F4F1EB;
-  --popover: #5A7A85;
-  --popover-foreground: #F4F1EB;
-  --primary: #5D7258;
-  --primary-foreground: #F4F1EB;
-  --secondary: #5A7A85;
-  --secondary-foreground: #F4F1EB;
-  --muted: #5A7A85;
-  --muted-foreground: #A89D90;
-  --accent: #7D9DA8;
-  --accent-foreground: #F4F1EB;
+  --background: #2E434F;
+  --foreground: #FBE1B5;
+  --card: #243641;
+  --card-foreground: #FBE1B5;
+  --popover: #243641;
+  --popover-foreground: #FBE1B5;
+  --primary: #F89254;
+  --primary-foreground: #2E434F;
+  --secondary: #243641;
+  --secondary-foreground: #FBE1B5;
+  --muted: #243641;
+  --muted-foreground: #8AA9B8;
+  --accent: #8DA249;
+  --accent-foreground: #FBE1B5;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: #4A6A75;
-  --input: #4A6A75;
-  --ring: #5D7258;
+  --border: #3B5867;
+  --input: #3B5867;
+  --ring: #F89254;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -189,11 +189,11 @@
 .hero-conic {
   background: conic-gradient(
     from var(--grad-angle),
-    #7D9DA8 0%,
-    #8FB0BB 25%,
-    #5A7A85 50%,
-    #6E8F9A 75%,
-    #7D9DA8 100%
+    #2E434F 0%,
+    #8AA9B8 25%,
+    #8DA249 50%,
+    #F89254 75%,
+    #2E434F 100%
   );
   animation: gradient-spin 20s linear infinite;
 }

@@ -27,7 +27,7 @@ export function Newsletter() {
     >
       <span
         className="pointer-events-none absolute inset-0 flex items-center justify-center font-display leading-none"
-        style={{ fontSize: "clamp(120px, 22vw, 320px)", color: "rgba(212,82,26,0.06)" }}
+        style={{ fontSize: "clamp(120px, 22vw, 320px)", color: "rgba(248,146,84,0.06)" }}
       >
         STAY
       </span>

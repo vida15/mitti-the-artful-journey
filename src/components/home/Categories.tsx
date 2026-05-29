@@ -14,7 +14,7 @@ const blocks = [
 export function Categories() {
   return (
     <section className="relative px-6 py-32 md:px-10 md:py-48">
-      <div className="pointer-events-none absolute inset-x-0 top-20 select-none text-center font-display leading-none" style={{ fontSize: "clamp(80px, 14vw, 180px)", color: "rgba(232,224,212,0.05)" }}>
+      <div className="pointer-events-none absolute inset-x-0 top-20 select-none text-center font-display leading-none" style={{ fontSize: "clamp(80px, 14vw, 180px)", color: "rgba(251,225,181,0.05)" }}>
         COLLECTIONS
       </div>
       <p className="relative mb-16 text-center font-editorial italic" style={{ fontSize: "clamp(28px, 3vw, 48px)", color: "var(--color-bone)" }}>
@@ -38,7 +38,7 @@ export function Categories() {
               alt={b.name}
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
             />
-            <div className="absolute inset-x-0 bottom-0 translate-y-full p-6 transition-transform duration-500 group-hover:translate-y-0" style={{ backgroundColor: "rgba(10,9,7,0.85)" }}>
+            <div className="absolute inset-x-0 bottom-0 translate-y-full p-6 transition-transform duration-500 group-hover:translate-y-0" style={{ backgroundColor: "rgba(36,54,65,0.85)" }}>
               <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>
                 Open ↗
               </p>
