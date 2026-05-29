@@ -86,7 +86,7 @@ function ArtistsPage() {
       </div>
 
       {/* Filter bar */}
-      <div className="mt-24 mb-10 flex flex-wrap items-center gap-3 border-y py-5" style={{ borderColor: "rgba(190,189,149,0.18)" }}>
+      <div className="mt-24 mb-10 flex flex-wrap items-center gap-3 border-y py-5" style={{ borderColor: "rgba(141,162,73,0.18)" }}>
         <span className="mr-2 font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>Region</span>
         {regions.map((r) => (
           <button
@@ -95,9 +95,9 @@ function ArtistsPage() {
             data-cursor="link"
             className="border px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest transition-colors"
             style={{
-              borderColor: region === r ? "var(--color-ember)" : "rgba(190,189,149,0.3)",
+              borderColor: region === r ? "var(--color-ember)" : "rgba(141,162,73,0.3)",
               color: region === r ? "var(--color-ember)" : "var(--color-bone)",
-              backgroundColor: region === r ? "rgba(226,66,90,0.08)" : "transparent",
+              backgroundColor: region === r ? "rgba(248,146,84,0.08)" : "transparent",
             }}
           >
             {r}
@@ -152,7 +152,7 @@ function ArtistsPage() {
       </div>
 
       {/* Manifesto closing */}
-      <div className="mt-32 border-t pt-16 text-center" style={{ borderColor: "rgba(190,189,149,0.18)" }}>
+      <div className="mt-32 border-t pt-16 text-center" style={{ borderColor: "rgba(141,162,73,0.18)" }}>
         <p className="mx-auto max-w-3xl font-editorial italic" style={{ fontSize: "clamp(28px, 4vw, 52px)", color: "var(--color-bone)" }}>
           "The hand that made this piece is the only algorithm we trust."
         </p>
