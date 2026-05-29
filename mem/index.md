@@ -1,5 +1,5 @@
 # Project Memory
 
 ## Core
-Palette "Glow": bg #283933 (deep botanical green), surface #546144 (moss), foreground #F2D5BA (cream), primary #A54F5E (rose), accent #E88E46 (ochre), hover #D68687 (blush), muted #BEBD95 (sage).
-All colors live as semantic tokens in src/styles.css — void/bone/ember/ochre/dust/ash/flare/paper map to the Glow hues.
+Palette "Teesta & Tea Gardens": bg #2C2C2A (Charcoal), surface #7A5A47 (Wet Earth), foreground #F4F1EB (Mist White), primary #5D7258 (Tea Leaf), accent #7D9DA8 (Teesta Blue), hover/muted #A89D90 (River Stone). Never use Mist White as bg — keep Charcoal for depth.
+All colors live as semantic tokens in src/styles.css — void/ink/ash/bone/paper/ember/flare/ochre/dust map to the Teesta hues.
