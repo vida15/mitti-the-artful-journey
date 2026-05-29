@@ -49,27 +49,17 @@ export function Hero() {
       </div>
 
       {/* Vertical accent line */}
-      <div className="absolute right-[42vw] top-1/2 hidden h-20 w-px -translate-y-1/2 md:block" style={{ backgroundColor: "var(--color-ochre)" }} />
+      <div className="absolute right-[42vw] top-1/2 hidden h-20 w-px -translate-y-1/2 md:block" style={{ backgroundColor: "#E88E46" }} />
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-6 md:px-10">
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-mono text-[11px] uppercase tracking-[0.15em]"
-          style={{ color: "var(--color-ochre)" }}
-        >
-          — 01 / Welcome to MITTI
-        </motion.p>
-
-        <h1 className="mt-6 font-editorial leading-[1.02]" style={{ fontSize: "clamp(56px, 8vw, 80px)", color: "#2A2622", fontWeight: 300, letterSpacing: "0.02em" }}>
+        <h1 className="font-editorial" style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)", color: "#2A2622", fontWeight: 300, letterSpacing: "-0.01em", lineHeight: 1.1, maxWidth: "700px" }}>
           {["Objects", "with a", "Soul."].map((w, i) => (
             <span key={i} className="block overflow-hidden">
               <motion.span
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.7, delay: 0.2 + i * 0.15, ease: [0.76, 0, 0.24, 1] }}
+                transition={{ duration: 0.7, delay: 0.1 + i * 0.15, ease: [0.76, 0, 0.24, 1] }}
                 className="block"
               >
                 {w}
@@ -81,17 +71,17 @@ export function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.95 }}
-          className="mt-8 max-w-md"
-          style={{ color: "#2A2622", fontSize: "0.9rem", letterSpacing: "0.1em" }}
+          transition={{ duration: 0.6, delay: 0.85 }}
+          className="mt-8 max-w-md font-body"
+          style={{ color: "#6B5E52", fontSize: "0.85rem", letterSpacing: "0.08em", lineHeight: 1.75 }}
         >
-          2,400 works. 94 artists. Zero compromises.
+          Handpicked from studios, villages, and dye yards across India.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.15 }}
+          transition={{ duration: 0.6, delay: 1.05 }}
           className="mt-10 flex flex-wrap items-center gap-8"
         >
           <a
@@ -105,8 +95,7 @@ export function Hero() {
           <a
             href="/artists"
             data-cursor="link"
-            className="font-mono text-[11px] uppercase tracking-widest transition-colors hover:text-[var(--color-bone)]"
-            style={{ color: "var(--color-dust)" }}
+            className="cta-outline-sage"
           >
             Our Artists ↗
           </a>
@@ -115,14 +104,14 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>
+        <span className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "#6B5E52" }}>
           Scroll
         </span>
         <motion.span
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           className="block h-6 w-px"
-          style={{ backgroundColor: "var(--color-dust)" }}
+          style={{ backgroundColor: "#6B5E52" }}
         />
       </div>
     </section>
