@@ -1,50 +1,32 @@
-## Plan: Replace site palette with "Grab Coffee With Me"
+## Plan: All text in Wheatfield; remove residual non-palette tints
 
-### New palette
-- Regent Blue `#1F281A`... wait — the hex `1F281A` is actually near-black green; the swatch shown is a dusty blue. I'll use the visual swatch value: **Regent Blue ≈ `#8AA9B8`** (dusty blue, matches the image).
-- Asparagus `#8DA249` (olive green)
-- Faded Orange `#F89254` (warm orange)
-- Navajo White `#FBE1B5` (cream)
-- Limed Spruce `#2E434F` (deep teal-navy)
+### What's actually on screen
+After the last swap there are no green/brown/old-red literals left in the codebase — only blue, orange, yellow, red wine, wheatfield. What the user is reading as "green/brown" is the muted-blue and mustard-yellow **text** (`--color-dust` and `--color-ochre`) on subtitles, captions, meta lines. They want every piece of text in Wheatfield (`#F5ECD2`), and accents (Blaze Orange / Orange Yellow / Red Wine) reserved for non-text things (buttons, marquee, dividers, borders).
 
-### Token mapping (semantic, full site)
-Background stays dark for depth per saved memory rule.
+### Changes
 
-- `--color-void` (page bg): `#2E434F` Limed Spruce
-- `--color-ink` (deeper section bg / shadow surfaces): `#243641` (slightly darker Limed Spruce)
-- `--color-ash` (mid surface / Stats strip): `#3B5867` (lifted Limed Spruce)
-- `--color-bone` / `--color-paper` (foreground text): `#FBE1B5` Navajo White
-- `--color-ember` (primary accent — buttons, marquee, selection): `#F89254` Faded Orange
-- `--color-flare` (hover / soft): `#8AA9B8` Regent Blue
-- `--color-ochre` (secondary accent — small labels, dividers): `#8DA249` Asparagus
-- `--color-dust` (muted text): `#8AA9B8` Regent Blue
-- `--color-electric` (pop 1): `#8DA249` Asparagus
-- `--color-violet` (pop 2): `#F89254` Faded Orange
+1. **`src/styles.css` — repoint muted-text token to Wheatfield**
+   - `--color-dust`: `#B8DCEA` → `#F5ECD2` (now Wheatfield, with `opacity` on individual usages providing the hierarchy)
+   - `--muted-foreground`: `#B8DCEA` → `#F5ECD2`
+   - Leave `--color-bone`, `--color-paper`, `--foreground` as Wheatfield.
 
-### Shadcn `:root` vars
-- `--background`: `#2E434F`
-- `--foreground`: `#FBE1B5`
-- `--card` / `--popover` / `--secondary` / `--muted`: `#243641`
-- `--card-foreground` / `--popover-foreground` / `--secondary-foreground` / `--muted-foreground`: `#FBE1B5` (muted-foreground: `#8AA9B8`)
-- `--primary`: `#F89254`, `--primary-foreground`: `#2E434F`
-- `--accent`: `#8DA249`, `--accent-foreground`: `#FBE1B5`
-- `--border` / `--input`: `#3B5867`
-- `--ring`: `#F89254`
+2. **Replace `color: var(--color-ochre)` text occurrences with `var(--color-bone)`**
+   - Files: `src/components/ProductCard.tsx`, `src/components/layout/CartDrawer.tsx`, `src/routes/works.$slug.tsx`, `src/routes/journal.index.tsx`, `src/routes/journal.$slug.tsx`, `src/routes/checkout.tsx`, `src/routes/artists.index.tsx`, `src/routes/artists.$slug.tsx`, `src/components/home/Testimonials.tsx`, `src/components/home/PressStrip.tsx`, `src/components/home/VideoReel.tsx`.
+   - Only touch `color:` declarations. Keep ochre on `backgroundColor`, `borderColor`, dividers, and accent dots.
 
-### Hero conic gradient
-Restop to: Limed Spruce → Regent Blue → Asparagus → Faded Orange → Limed Spruce, so the animated hero reads in the new palette.
+3. **Replace `color: var(--color-ember)` text occurrences with `var(--color-bone)`**
+   - Files: `src/components/ProductCard.tsx`, `src/routes/works.$slug.tsx`, `src/routes/journal.$slug.tsx`, `src/routes/checkout.tsx`, `src/routes/checkout.success.tsx`, `src/routes/artists.index.tsx`, `src/routes/artists.$slug.tsx`, plus any other text-color use found in a final grep.
+   - Headings, "Featured Works", "MITTI" wordmarks already use `--color-bone` — leave them.
+   - Keep ember on backgrounds/borders/marquee/buttons (e.g. Marquee bg, retry buttons, primary CTA fills).
 
-### Components with hardcoded colors
-Audit and replace any remaining hex/`#000`/`rgba(...)` literals in:
-- `src/components/home/Manifesto.tsx` (Word color `rgba(232,224,212,...)` → Navajo White `rgba(251,225,181,...)`)
-- `src/components/home/PressStrip.tsx` (border `rgba(190,189,149,0.15)` → token-based)
-- `src/components/home/Stats.tsx` (divider `rgba(122,106,88,0.4)` → token)
-- `src/components/home/Testimonials.tsx` (track `rgba(122,106,88,0.3)` → token)
-- `src/components/home/VideoReel.tsx` (grid border `rgba(242,213,186,0.05)` → token)
-- Quick grep across `src/components/**` and `src/routes/**` for any other hardcoded color literals and convert to `var(--color-*)`.
+4. **Stats counter numbers (`src/components/home/Stats.tsx`)**
+   - Currently `color: var(--color-ember)` for the big numerals. User wants all text in Wheatfield, so swap to `var(--color-bone)`. Keep the orange divider lines as accent.
 
-### Memory update
-Rewrite `mem/index.md` Core rule to describe the new "Grab Coffee" palette and the token mapping.
+5. **Any other `color: var(--color-flare|electric|violet)` text usage**
+   - Final grep across `src/`; convert each to `var(--color-bone)`.
+
+6. **Memory**
+   - Add a Core rule: "All text uses `--color-bone` (Wheatfield). Orange/Yellow/Red Wine tokens are accent-only — use them on backgrounds, borders, dividers, and buttons, never as text color."
 
 ### Out of scope
-No layout, typography, copy, image, or component-structure changes. Pure color-system swap.
+No layout, typography, copy, or component-structure changes. Backgrounds, borders, button fills, marquee, hero gradient stay exactly as they are.
