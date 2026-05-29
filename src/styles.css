@@ -4,20 +4,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* MITTI design system — Glow palette (floral, deep botanical) */
+/* MITTI design system — Teesta & Tea Gardens palette */
 
 @theme inline {
-  --color-void: #283933;       /* deep botanical green — base */
-  --color-ink: #1a2622;        /* darker ink */
-  --color-ash: #546144;        /* moss surface */
-  --color-bone: #F2D5BA;       /* warm cream — foreground */
-  --color-paper: #F2D5BA;
-  --color-ember: #E2425A;      /* vivid rose — primary */
-  --color-flare: #FF8FA3;      /* hot blush — accent hover */
-  --color-ochre: #FFA235;      /* bright marigold — secondary accent */
-  --color-dust: #BEBD95;       /* sage — muted */
-  --color-electric: #34D6C1;   /* electric mint — pop accent */
-  --color-violet: #8C6BE6;     /* iris violet — pop accent */
+  --color-void: #2C2C2A;       /* Charcoal — base */
+  --color-ink: #1F1F1D;        /* deeper charcoal */
+  --color-ash: #7A5A47;        /* Wet Earth — surface */
+  --color-bone: #F4F1EB;       /* Mist White — foreground */
+  --color-paper: #F4F1EB;
+  --color-ember: #5D7258;      /* Tea Leaf — primary */
+  --color-flare: #A89D90;      /* River Stone — soft hover */
+  --color-ochre: #7D9DA8;      /* Teesta Blue — secondary accent */
+  --color-dust: #A89D90;       /* River Stone — muted */
+  --color-electric: #9EB8C2;   /* lifted Teesta Blue — pop */
+  --color-violet: #8AA085;     /* lifted Tea Leaf — pop */
 
   --font-display: "Bebas Neue", sans-serif;
   --font-editorial: "Playfair Display", serif;
