@@ -1,67 +1,50 @@
 ## Goal
 
-The site feels empty because most pages have a single grid and the home page stops after a few sections. I'll add new sections, richer detail pages, and seed more content — keeping the Glow palette and vibrancy at level 3 (rich but not maximalist).
+Reduce the visual palette to your 4 colors only, used consistently across every page and component. No burnt rose, no ochre, no old beige — those go away.
 
-## 1. Seed more content (DB)
+## Color mapping
 
-- Add **5 new artists** (with bios, origins, portrait URLs from existing artwork files or generated placeholders).
-- Add **~18 more products** spread across the new artists, with varied categories (painting, sketch, mixed media, ceramic, textile), price tiers, and `featured` flags. Use existing `/artworks/*.jpg` images plus 2–3 newly generated artwork images for variety.
-- Add **6 more testimonials**.
-- Create a new `journal_posts` table (slug, title, excerpt, body, cover_url, author, published_at) with public-read RLS, and seed 6 posts.
-- Create a new `press_mentions` table (publication, quote, url, logo_url) with public-read RLS, and seed 6 entries.
+| Role | New value | Replaces |
+|---|---|---|
+| Global background | Warm Ivory `#F7F3EE` | `#F3EEE7` |
+| Card / surface | Soft Ivory `#EFE9E0` (derived, one step darker than ivory for separation) | `#E6DED2` |
+| Primary text | Charcoal `#2F2A26` | `#2A2622` |
+| Dark anchor sections (ArtistFeature, VideoReel/Manifesto, Newsletter, dark CTAs) | Charcoal `#2F2A26` | `#2A2622` |
+| Text on dark sections | Warm Ivory `#F7F3EE` | `#F3EEE7` |
+| Primary accent (links, CTA hover, selection, ring, "→") | Muted Clay `#B98B73` | Burnt rose `#A54F5E` AND ochre `#E88E46` (both collapse here) |
+| Secondary accent / muted highlights (sage labels, soft chips, hover tint) | Dusty Sage `#7C8973` | `#BEBD95` (and old mint/iris) |
+| Secondary text | Charcoal at 65% (`#2F2A26` / opacity-65) | `#6B5E52` warm brown |
+| Borders / hairlines | Charcoal at 12% | `#D4C9BC` |
 
-## 2. Home page — add sections
+One open call I'm making: your 4 colors don't include a separate card surface or a second accent, so I'm deriving **Soft Ivory `#EFE9E0`** for card/panel surfaces (one shade off ivory, still in-palette feel) and collapsing rose + ochre into **Clay** as the single accent. Sage stays as the quieter secondary accent (labels, sublines on dark sections). If you'd rather have everything flat on ivory with zero surface contrast, say so and I'll drop the soft-ivory surface and use ivory everywhere with hairline borders only.
 
-Insert new components into `src/routes/index.tsx` between existing ones:
-- **Process** — 4-step editorial section (Source → Make → Curate → Ship) with numbered cards and subtle motion.
-- **JournalTeaser** — 3 latest journal posts in an asymmetric layout.
-- **PressStrip** — silent marquee of publication names/logos.
-- **VideoReel** — looping muted background video panel (placeholder MP4 or animated gradient if no asset) with editorial caption.
-- **CategoryShowcase** improvement — replace placeholder gradients in `Categories` with real product imagery sampled from DB.
+## What changes
 
-## 3. Artists page (`/artists`)
+1. **`src/styles.css`** — rewrite the design tokens:
+   - `--color-void` → `#F7F3EE`, `--color-ink`/`--color-ash` → `#EFE9E0`, `--color-bone`/`--color-paper` → `#2F2A26`
+   - `--color-ember`/`--color-flare` → `#B98B73` (Clay)
+   - `--color-ochre` → `#B98B73` (alias to Clay; remove the orange entirely)
+   - `--color-electric`/`--color-violet` → `#7C8973` (Sage)
+   - `--color-dust` → `#2F2A26` used at 65% opacity in components, token kept as a fallback
+   - shadcn aliases (`--background`, `--card`, `--primary`, `--accent`, `--ring`, `--border`, `--input`, `--primary-foreground`, etc.) all rewired to the new palette
+   - `::selection`, `.cta-outline`, body bg/text — all swapped to new hexes
 
-Replace the bare grid with:
-- **Hero collage** — overlapping artwork thumbnails + big editorial headline + count ("94 hands. 28 origins.")
-- **Filter bar** — by region (chips) and medium.
-- **Artist cards** — portrait + name + origin + work count + 3-thumbnail strip of their works + short bio excerpt + "View studio →".
-- **Manifesto block** at the bottom.
+2. **Hard-coded hex usage in components** — search-and-replace the literal old hexes (`#F3EEE7`, `#E6DED2`, `#2A2622`, `#A54F5E`, `#E88E46`, `#BEBD95`, `#6B5E52`, `#D4C9BC`) in:
+   - `src/components/home/*` (Hero, ArtistFeature, Categories, FeaturedWorks, FilmStrip, JournalTeaser, Manifesto, Marquee, Newsletter, PressStrip, Process, Stats, Testimonials, VideoReel)
+   - `src/components/layout/*` (Navbar, Footer, CartDrawer, MobileMenu)
+   - `src/components/ProductCard.tsx`
+   - `src/routes/*` (index, artists.*, works.$slug, journal.*, collections, checkout.*)
+   - `src/lib/types.ts` (the `gradients` array — collapse to clay + sage + charcoal pairs)
 
-## 4. Artist detail (`/artists/$slug`)
+3. **Dark sections stay dark anchors** — ArtistFeature, VideoReel/Manifesto, Newsletter keep `#2F2A26` background with ivory text; the inline `#E88E46` ochre labels in VideoReel/ArtistFeature become **Clay** and the `#BEBD95` mint→sage sublines become **Sage**.
 
-Already exists — verify and enhance:
-- Add a quote pulled from bio, a "process" image strip, and a "more from this artist" rail.
+4. **Noise / texture** — body SVG noise filter values stay (they're neutral grey), only the background color underneath changes.
 
-## 5. Work detail (`/works/$slug`)
+## What stays the same
 
-- Add provenance block (artist, origin, year, medium, dimensions).
-- Materials breakdown.
-- **Related works** carousel (same artist + same category).
-- Sticky artist mini-card with link to their page.
-- Story section with editorial pull-quote.
+- Typography (Cormorant Garamond / Inter / IBM Plex Mono)
+- Layout, sections, animations, transitions
+- Border radius rules (0 on buttons, ≤4px on cards)
+- All content, copy, routes
 
-## 6. New routes
-
-- `/journal` — index of journal posts (magazine layout).
-- `/journal/$slug` — long-form post page with cover image, body, share metadata.
-- `/process` — dedicated process page (linked from home).
-
-## 7. Visual richness (vibrancy 3)
-
-- Add subtle decorative SVG accents (botanical line motifs) in section dividers.
-- Use the new `--color-electric` and `--color-violet` tokens sparingly as accent highlights on hover/badges.
-- Add a thin colored rule above each section heading (rotating through ember/ochre/electric/violet).
-
-## Technical notes
-
-- New tables created via `supabase--migration` with public-read RLS.
-- Seed data inserted via `supabase--insert`.
-- New server functions: `getJournalPosts`, `getJournalPost`, `getPressMentions`, `getRelatedWorks` in `src/lib/products.functions.ts` and `src/lib/journal.functions.ts`.
-- New route files added under `src/routes/`; head() metadata set per route.
-- No changes to auth, payments, or existing route shells.
-
-## Out of scope
-
-- Stripe checkout flow (already wired, leave alone).
-- Palette changes (locked to Glow).
-- Mobile-specific redesign beyond responsive defaults.
+After approval I'll do this in one pass: rewrite `styles.css`, then sweep the components with targeted replacements.
