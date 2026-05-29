@@ -111,13 +111,31 @@ export const placeOrder = createServerFn({ method: "POST" })
   .inputValidator((d: unknown) => orderSchema.parse(d))
   .handler(async ({ data }) => {
     const supabase = client();
-    const subtotal = data.items.reduce((s, i) => s + i.price * i.qty, 0);
+    // SECURITY: Never trust client-supplied prices. Fetch from DB.
+    const ids = data.items.map((i) => i.productId);
+    const { data: dbProducts, error: priceErr } = await supabase
+      .from("products")
+      .select("id, price_inr, title, in_stock")
+      .in("id", ids);
+    if (priceErr || !dbProducts) {
+      console.error("[placeOrder] price lookup failed:", priceErr);
+      return { ok: false as const, error: "Unable to complete request. Please try again." };
+    }
+    const priceMap = new Map(dbProducts.map((p) => [p.id, p]));
+    if (data.items.some((i) => !priceMap.has(i.productId) || priceMap.get(i.productId)!.in_stock === false)) {
+      return { ok: false as const, error: "One or more items are unavailable." };
+    }
+    const verifiedItems = data.items.map((i) => {
+      const p = priceMap.get(i.productId)!;
+      return { productId: i.productId, title: p.title, price: p.price_inr, qty: i.qty, size: i.size };
+    });
+    const subtotal = verifiedItems.reduce((s, i) => s + i.price * i.qty, 0);
     const status = data.payment_method === "cod" ? "cod_pending" : "pending";
     const { data: order, error } = await supabase
       .from("orders")
       .insert({
         email: data.email,
-        items: data.items,
+        items: verifiedItems,
         subtotal,
         shipping_address: data.shipping,
         payment_method: data.payment_method,
@@ -125,6 +143,9 @@ export const placeOrder = createServerFn({ method: "POST" })
       })
       .select("id")
       .single();
-    if (error) return { ok: false as const, error: error.message };
+    if (error) {
+      console.error("[placeOrder] insert failed:", error);
+      return { ok: false as const, error: "Unable to place order. Please try again." };
+    }
     return { ok: true as const, orderId: order.id };
   });
