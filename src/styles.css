@@ -7,9 +7,9 @@
 /* MITTI design system — Teesta & Tea Gardens palette */
 
 @theme inline {
-  --color-void: #2C2C2A;       /* Charcoal — base */
-  --color-ink: #1F1F1D;        /* deeper charcoal */
-  --color-ash: #7A5A47;        /* Wet Earth — surface */
+  --color-void: #7D9DA8;       /* Teesta Blue — base */
+  --color-ink: #5A7A85;        /* deeper Teesta — shadow */
+  --color-ash: #5A7A85;        /* deep Teesta — surface */
   --color-bone: #F4F1EB;       /* Mist White — foreground */
   --color-paper: #F4F1EB;
   --color-ember: #5D7258;      /* Tea Leaf — primary */
@@ -69,24 +69,24 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #2C2C2A;
+  --background: #7D9DA8;
   --foreground: #F4F1EB;
-  --card: #7A5A47;
+  --card: #5A7A85;
   --card-foreground: #F4F1EB;
-  --popover: #7A5A47;
+  --popover: #5A7A85;
   --popover-foreground: #F4F1EB;
   --primary: #5D7258;
   --primary-foreground: #F4F1EB;
-  --secondary: #7A5A47;
+  --secondary: #5A7A85;
   --secondary-foreground: #F4F1EB;
-  --muted: #7A5A47;
+  --muted: #5A7A85;
   --muted-foreground: #A89D90;
   --accent: #7D9DA8;
-  --accent-foreground: #2C2C2A;
+  --accent-foreground: #F4F1EB;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: #3A3A37;
-  --input: #3A3A37;
+  --border: #4A6A75;
+  --input: #4A6A75;
   --ring: #5D7258;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -189,11 +189,11 @@
 .hero-conic {
   background: conic-gradient(
     from var(--grad-angle),
-    #2C2C2A 0%,
-    #1F1F1D 25%,
-    rgba(93, 114, 88, 0.18) 50%,
-    rgba(125, 157, 168, 0.14) 75%,
-    #2C2C2A 100%
+    #7D9DA8 0%,
+    #8FB0BB 25%,
+    #5A7A85 50%,
+    #6E8F9A 75%,
+    #7D9DA8 100%
   );
   animation: gradient-spin 20s linear infinite;
 }
