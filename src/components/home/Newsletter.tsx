@@ -6,7 +6,6 @@ import { subscribeNewsletter } from "@/lib/newsletter.functions";
 export function Newsletter() {
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
-  const [flash, setFlash] = useState(false);
   const subscribe = useServerFn(subscribeNewsletter);
 
   const submit = async (e: FormEvent) => {
@@ -15,8 +14,6 @@ export function Newsletter() {
     try {
       await subscribe({ data: { email } });
     } catch {}
-    setFlash(true);
-    setTimeout(() => setFlash(false), 80);
     setDone(true);
   };
 
