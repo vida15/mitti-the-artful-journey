@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const items = [
   "Handmade",
   "Authentic",
@@ -10,26 +8,29 @@ const items = [
 ];
 
 export function Marquee() {
-  const [fast, setFast] = useState(false);
   return (
     <div
-      onMouseEnter={() => setFast(true)}
-      onMouseLeave={() => setFast(false)}
-      className="relative h-[72px] overflow-hidden"
-      style={{ backgroundColor: "var(--color-ember)" }}
+      className="relative h-[64px] overflow-hidden"
+      style={{
+        backgroundColor: "#F3EEE7",
+        borderTop: "1px solid #E6DED2",
+        borderBottom: "1px solid #E6DED2",
+      }}
     >
       <div
         className="absolute inset-y-0 flex items-center whitespace-nowrap"
-        style={{
-          animation: `marquee ${fast ? 24 : 72}s linear infinite`,
-        }}
+        style={{ animation: "marquee 180s linear infinite" }}
       >
         {[...Array(2)].map((_, dup) => (
           <div key={dup} className="flex items-center">
             {items.map((t, i) => (
-              <span key={`${dup}-${i}`} className="font-editorial italic text-2xl" style={{ color: "#F7F3EE" }}>
-                <span className="mx-12">{t}</span>
-                <span>·</span>
+              <span
+                key={`${dup}-${i}`}
+                className="font-editorial"
+                style={{ color: "#6B5E52", fontSize: "1.1rem", fontWeight: 400 }}
+              >
+                <span className="mx-10">{t}</span>
+                <span style={{ color: "#BEBD95" }}>·</span>
               </span>
             ))}
           </div>

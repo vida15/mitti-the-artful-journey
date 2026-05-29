@@ -7,14 +7,12 @@ const steps = [
   { n: "04", title: "Send", body: "Museum-grade packing in Mumbai. Insured, tracked, in your hands within ten days." },
 ];
 
-const accents = ["#B98B73", "#B98B73", "#B98B73", "#B98B73"];
-
 export function Process() {
   return (
-    <section className="px-6 py-24 md:px-10 md:py-32" style={{ backgroundColor: "#EFE9E0" }}>
+    <section className="px-6 py-24 md:px-10 md:py-32" style={{ backgroundColor: "#E6DED2" }}>
       <div className="mx-auto max-w-7xl">
-        <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>— 04 / The Method</p>
-        <h2 className="mt-4 max-w-3xl font-editorial italic leading-[1.05]" style={{ fontSize: "clamp(48px, 6vw, 96px)", color: "var(--color-bone)" }}>
+        <p className="label-mini">— 04 / The Method</p>
+        <h2 className="mt-4 max-w-3xl font-editorial" style={{ fontSize: "clamp(2rem, 4.5vw, 3rem)", color: "#2A2622", fontWeight: 400, letterSpacing: "-0.01em" }}>
           How a piece reaches your wall.
         </h2>
         <div className="mt-20 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
@@ -25,12 +23,11 @@ export function Process() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, margin: "-10% 0px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="relative pl-6"
+              className="relative"
             >
-              <span className="absolute left-0 top-2 block h-12 w-px" style={{ backgroundColor: accents[i] }} />
-              <span className="font-mono text-[11px] uppercase tracking-widest" style={{ color: accents[i] }}>{s.n}</span>
-              <h3 className="mt-3 font-editorial italic text-3xl" style={{ color: "#2F2A26" }}>{s.title}</h3>
-              <p className="mt-4 text-sm leading-relaxed" style={{ color: "var(--color-dust)" }}>{s.body}</p>
+              <span className="font-editorial italic block" style={{ fontSize: "3rem", fontWeight: 300, color: "#BEBD95", lineHeight: 1 }}>{s.n}</span>
+              <h3 className="mt-4 font-editorial" style={{ color: "#2A2622", fontSize: "1.3rem", fontWeight: 400, letterSpacing: "-0.01em" }}>{s.title}</h3>
+              <p className="mt-3" style={{ color: "#6B5E52", fontSize: "0.9rem", lineHeight: 1.7 }}>{s.body}</p>
             </motion.div>
           ))}
         </div>

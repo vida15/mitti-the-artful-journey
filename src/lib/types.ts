@@ -72,11 +72,11 @@ export const formatINR = (n: number) =>
 /** Solid-color SVG placeholder so the build is visually complete without art assets. */
 export function placeholder(title: string, w = 800, h = 1000, hue = 0): string {
   const palette = [
-    ["#2F2A26", "#7C8973"],  /* deep botanical → moss */
-    ["#B98B73", "#2F2A26"],  /* rose → deep green */
-    ["#7C8973", "#7C8973"],  /* moss → sage */
-    ["#B98B73", "#B98B73"],  /* ochre → rose */
-    ["#D68687", "#7C8973"],  /* blush → moss */
+    ["#2A2622", "#6B5E52"],  /* charcoal → muted */
+    ["#A54F5E", "#2A2622"],  /* rose → charcoal */
+    ["#BEBD95", "#E6DED2"],  /* sage → surface */
+    ["#E88E46", "#A54F5E"],  /* ochre → rose */
+    ["#6B5E52", "#BEBD95"],  /* muted → sage */
   ];
   const [a, b] = palette[hue % palette.length];
   const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${w} ${h}'>
@@ -84,7 +84,7 @@ export function placeholder(title: string, w = 800, h = 1000, hue = 0): string {
       <stop offset='0%' stop-color='${a}'/><stop offset='100%' stop-color='${b}'/>
     </linearGradient></defs>
     <rect width='${w}' height='${h}' fill='url(#g)'/>
-    <text x='50%' y='95%' text-anchor='middle' font-family='Bebas Neue, sans-serif' font-size='${Math.round(w*0.04)}' fill='#F2D5BA' opacity='0.55' letter-spacing='4'>${title.toUpperCase()}</text>
+    <text x='50%' y='95%' text-anchor='middle' font-family='Inter, sans-serif' font-weight='500' font-size='${Math.round(w*0.03)}' fill='#F3EEE7' opacity='0.7' letter-spacing='4'>${title.toUpperCase()}</text>
   </svg>`;
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 }
