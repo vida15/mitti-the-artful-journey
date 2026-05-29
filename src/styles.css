@@ -1,29 +1,30 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@400;500&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
 /* MITTI design system — Parchment palette (warm, editorial, hand-printed) */
 
 @theme inline {
-  --color-void: #F7F3EE;       /* warm ivory — global background */
-  --color-ink: #EFE9E0;        /* soft ivory — surface */
-  --color-ash: #EFE9E0;        /* surface */
-  --color-bone: #2F2A26;       /* charcoal — primary text */
-  --color-paper: #2F2A26;
-  --color-ember: #B98B73;      /* muted clay — primary accent */
-  --color-flare: #B98B73;      /* hover (same clay) */
-  --color-ochre: #B98B73;      /* clay (ochre collapsed) */
-  --color-dust: #2F2A26;       /* charcoal (use opacity in component) */
-  --color-electric: #7C8973;   /* dusty sage */
-  --color-violet: #7C8973;     /* dusty sage */
+  --color-void: #F3EEE7;       /* parchment — global background */
+  --color-ink: #E6DED2;        /* secondary surface (cards, inset) */
+  --color-ash: #E6DED2;
+  --color-bone: #2A2622;       /* charcoal — primary text + dark anchor */
+  --color-paper: #2A2622;
+  --color-ember: #A54F5E;      /* burnt rose — CTA / price */
+  --color-flare: #A54F5E;
+  --color-ochre: #E88E46;      /* warm ochre — tags / hover / ✦ */
+  --color-dust: #6B5E52;       /* muted text */
+  --color-electric: #BEBD95;   /* dusty sage — dividers / labels */
+  --color-violet: #BEBD95;
+  --color-hairline: #D4C9BC;   /* card hover hairline */
 
   --font-display: "Cormorant Garamond", serif;
   --font-editorial: "Cormorant Garamond", serif;
   --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
+  --font-mono: "Inter", system-ui, sans-serif;
   --font-accent: "Cormorant Garamond", serif;
 
   --radius-sm: calc(var(--radius) - 4px);
@@ -70,25 +71,25 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #F7F3EE;
-  --foreground: #2F2A26;
-  --card: #EFE9E0;
-  --card-foreground: #2F2A26;
-  --popover: #EFE9E0;
-  --popover-foreground: #2F2A26;
-  --primary: #B98B73;
-  --primary-foreground: #F7F3EE;
-  --secondary: #EFE9E0;
-  --secondary-foreground: #2F2A26;
-  --muted: #EFE9E0;
-  --muted-foreground: rgba(47,42,38,0.65);
-  --accent: #7C8973;
-  --accent-foreground: #F7F3EE;
+  --background: #F3EEE7;
+  --foreground: #2A2622;
+  --card: #E6DED2;
+  --card-foreground: #2A2622;
+  --popover: #E6DED2;
+  --popover-foreground: #2A2622;
+  --primary: #A54F5E;
+  --primary-foreground: #F3EEE7;
+  --secondary: #E6DED2;
+  --secondary-foreground: #2A2622;
+  --muted: #E6DED2;
+  --muted-foreground: #6B5E52;
+  --accent: #E88E46;
+  --accent-foreground: #2A2622;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: rgba(47,42,38,0.12);
-  --input: rgba(47,42,38,0.12);
-  --ring: #B98B73;
+  --border: #E6DED2;
+  --input: #D4C9BC;
+  --ring: #A54F5E;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -149,7 +150,7 @@
     color: var(--color-bone);
     font-family: var(--font-body);
     font-weight: 400;
-    line-height: 1.65;
+    line-height: 1.75;
     cursor: none;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.15 0 0 0 0 0.13 0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
@@ -159,14 +160,14 @@
   }
 
   ::selection {
-    background: var(--color-ember);
-    color: #F7F3EE;
+    background: #A54F5E;
+    color: #F3EEE7;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-editorial);
     font-weight: 400;
-    letter-spacing: 0.02em;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -187,26 +188,53 @@
 .font-display { font-family: var(--font-display); letter-spacing: 0; }
 .font-editorial { font-family: var(--font-editorial); }
 .font-body { font-family: var(--font-body); }
-.font-mono { font-family: var(--font-mono); letter-spacing: 0.1em; }
+.font-mono { font-family: var(--font-body); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; }
 .font-accent { font-family: var(--font-accent); }
+
+.label-mini {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6B5E52;
+}
 
 /* Outlined CTA — flat, no glassmorphism */
 .cta-outline {
   display: inline-block;
   padding: 0.85rem 1.6rem;
-  border: 1px solid #2F2A26;
-  color: #2F2A26;
+  border: 1.5px solid #2A2622;
+  color: #2A2622;
   background: transparent;
   font-family: var(--font-body);
-  font-size: 0.8rem;
-  letter-spacing: 0.18em;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   border-radius: 0;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
-.cta-outline:hover { background-color: #2F2A26; color: #F7F3EE; }
+.cta-outline:hover { background-color: #2A2622; color: #F3EEE7; }
+
+.cta-outline-sage {
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  border: 1.5px solid #BEBD95;
+  color: #6B5E52;
+  background: transparent;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: color 0.4s ease, border-color 0.4s ease;
+}
+.cta-outline-sage:hover { color: #2A2622; border-color: #2A2622; }
 
 button, .btn { border-radius: 0; }
+input, textarea, select { border-radius: 2px; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
