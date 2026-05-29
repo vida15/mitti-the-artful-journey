@@ -1,38 +1,32 @@
-## New palette: Teesta & Tea Gardens
+## Plan: Teesta Blue Background
 
-Replace the current "Glow" palette with the Teesta palette across the design system. Use a deep, atmospheric background (not Mist White) so the site keeps cinematic depth.
+### What
+Change the site's primary background from Charcoal (`#2C2C2A`) to Teesta Blue (`#7D9DA8`). Keep text and accent hierarchy readable against the lighter blue surface.
 
-### Color role mapping
+### How
+Update `src/styles.css` only:
 
-| Role | Token | Hex | Notes |
-|---|---|---|---|
-| Base background | `--color-void` | `#2C2C2A` Charcoal | Deep neutral, replaces botanical green |
-| Deeper ink | `--color-ink` | `#1F1F1D` | Slightly darker Charcoal for layering |
-| Surface / cards | `--color-ash` | `#7A5A47` Wet Earth | Warm earthy surface tone |
-| Foreground (text) | `--color-bone` / `--color-paper` | `#F4F1EB` Mist White | Primary on-dark text |
-| Primary accent | `--color-ember` | `#5D7258` Tea Leaf | Replaces rose; used for CTAs, hover underlines |
-| Hover / soft accent | `--color-flare` | `#A89D90` River Stone | Muted highlight on hover |
-| Secondary accent | `--color-ochre` | `#7D9DA8` Teesta Blue | Editorial rules, "01 / Welcome" labels, scroll line |
-| Muted text | `--color-dust` | `#A89D90` River Stone | Body muted, captions |
-| Pop accents | `--color-electric`, `--color-violet` | derived from Teesta Blue + Tea Leaf | Subtle tints only |
+1. **Base tokens**
+   - `--color-void`: `#2C2C2A` → `#7D9DA8` (new base surface)
+   - `--color-ink`: `#1F1F1D` → `#5A7A85` (deeper blue shadow for depth)
 
-### Files to edit
+2. **Shadcn `:root` vars**
+   - `--background`: `#2C2C2A` → `#7D9DA8`
+   - `--card`: `#7A5A47` → `#5A7A85` (darker blue for card surfaces)
+   - `--popover`: `#7A5A47` → `#5A7A85`
+   - `--secondary`: `#7A5A47` → `#5A7A85`
+   - `--muted`: `#7A5A47` → `#5A7A85`
+   - `--border` / `--input`: `#3A3A37` → `#4A6A75`
 
-1. **`src/styles.css`** — only file with hex colors:
-   - Update `@theme inline` block with the new hex values for every `--color-*` token above.
-   - Update `:root` shadcn vars: `--background: #2C2C2A`, `--foreground: #F4F1EB`, `--card/popover: #7A5A47`, `--primary: #5D7258`, `--accent: #7D9DA8`, `--muted-foreground: #A89D90`, `--border/input: #7A5A47` (or a subtle charcoal variant), `--ring: #5D7258`.
-   - Update `body` background to `--color-void` (Charcoal).
-   - Update `.hero-conic` gradient stops to use Charcoal + Tea Leaf + Teesta Blue tints (keeps the rotating depth).
-   - Update `::selection` to Tea Leaf bg / Mist White fg.
+3. **Foreground stays the same**
+   - `--foreground`, `--color-bone`, `--color-paper` remain `#F4F1EB` (Mist White on blue is readable and airy).
 
-2. **`mem/index.md`** — replace the "Glow" Core memory with the Teesta palette mapping so future work uses the same tokens.
+4. **Hero conic gradient**
+   - Update gradient stops from charcoal tones to blue tones so the animated hero matches the new background.
+
+5. **Selection & body**
+   - `body` background already uses `var(--color-void)` — inherits automatically.
+   - `::selection` background (`var(--color-ember)`) stays; contrast on blue is fine.
 
 ### Out of scope
-
-- No component file edits — every component already reads from `var(--color-*)` tokens, so the palette swap flows through automatically.
-- No layout, typography, or content changes.
-- No changes to images, products, or copy.
-
-### Verification
-
-- Reload the home page and confirm: Charcoal background, Mist White text, Tea Leaf CTA hover/underline, Teesta Blue "— 01 / Welcome" label and scroll line, Wet Earth marquee strip, River Stone muted body copy.
+No component, layout, image, or copy changes. All components read from tokens, so the swap flows through automatically.
