@@ -1,32 +1,64 @@
-## Plan: All text in Wheatfield; remove residual non-palette tints
+## New palette (from your reference)
 
-### What's actually on screen
-After the last swap there are no green/brown/old-red literals left in the codebase — only blue, orange, yellow, red wine, wheatfield. What the user is reading as "green/brown" is the muted-blue and mustard-yellow **text** (`--color-dust` and `--color-ochre`) on subtitles, captions, meta lines. They want every piece of text in Wheatfield (`#F5ECD2`), and accents (Blaze Orange / Orange Yellow / Red Wine) reserved for non-text things (buttons, marquee, dividers, borders).
+- Saffron `#F8C662` — primary accent (buttons, marquee, highlights)
+- Saffron text `#F8C662` — used as foreground for headlines/body, like the reference cards
+- Ultra Violet `#595082` — secondary accent / lifted surface
+- Dark Purple `#2C263F` — deep surface (cards, drawers, footer)
+- Hunter Green `#41644A` — mid surface / borders / hover
+- Dark Green `#213722` — base background (every page)
 
-### Changes
+## Token remap in `src/styles.css`
 
-1. **`src/styles.css` — repoint muted-text token to Wheatfield**
-   - `--color-dust`: `#B8DCEA` → `#F5ECD2` (now Wheatfield, with `opacity` on individual usages providing the hierarchy)
-   - `--muted-foreground`: `#B8DCEA` → `#F5ECD2`
-   - Leave `--color-bone`, `--color-paper`, `--foreground` as Wheatfield.
+Repoint the existing semantic tokens so every component inherits the new palette automatically — no per-component color changes needed:
 
-2. **Replace `color: var(--color-ochre)` text occurrences with `var(--color-bone)`**
-   - Files: `src/components/ProductCard.tsx`, `src/components/layout/CartDrawer.tsx`, `src/routes/works.$slug.tsx`, `src/routes/journal.index.tsx`, `src/routes/journal.$slug.tsx`, `src/routes/checkout.tsx`, `src/routes/artists.index.tsx`, `src/routes/artists.$slug.tsx`, `src/components/home/Testimonials.tsx`, `src/components/home/PressStrip.tsx`, `src/components/home/VideoReel.tsx`.
-   - Only touch `color:` declarations. Keep ochre on `backgroundColor`, `borderColor`, dividers, and accent dots.
+- `--color-void` (bg) → `#213722` Dark Green
+- `--color-ink` (deep surface) → `#2C263F` Dark Purple
+- `--color-ash` (lifted surface / borders) → `#41644A` Hunter Green
+- `--color-bone` / `--color-paper` / `--color-dust` / `--foreground` / `--muted-foreground` → `#F8C662` Saffron (all text reads Saffron, matching the reference)
+- `--color-ember` (primary accent) → `#F8C662` Saffron
+- `--color-flare` / `--color-ochre` (secondary accent) → `#595082` Ultra Violet
+- `--color-electric` → `#41644A` Hunter Green
+- `--color-violet` (pop) → `#595082` Ultra Violet
+- `:root` shadcn vars (`--background`, `--card`, `--muted`, `--primary`, `--accent`, `--border`, `--input`, `--ring`, etc.) repointed to the same hex values
 
-3. **Replace `color: var(--color-ember)` text occurrences with `var(--color-bone)`**
-   - Files: `src/components/ProductCard.tsx`, `src/routes/works.$slug.tsx`, `src/routes/journal.$slug.tsx`, `src/routes/checkout.tsx`, `src/routes/checkout.success.tsx`, `src/routes/artists.index.tsx`, `src/routes/artists.$slug.tsx`, plus any other text-color use found in a final grep.
-   - Headings, "Featured Works", "MITTI" wordmarks already use `--color-bone` — leave them.
-   - Keep ember on backgrounds/borders/marquee/buttons (e.g. Marquee bg, retry buttons, primary CTA fills).
+## Kill the rainbow hero
 
-4. **Stats counter numbers (`src/components/home/Stats.tsx`)**
-   - Currently `color: var(--color-ember)` for the big numerals. User wants all text in Wheatfield, so swap to `var(--color-bone)`. Keep the orange divider lines as accent.
+Replace the 6-stop conic `.hero-conic` gradient with a calm 3-stop blend in the new palette so the first page has depth, not a rainbow:
 
-5. **Any other `color: var(--color-flare|electric|violet)` text usage**
-   - Final grep across `src/`; convert each to `var(--color-bone)`.
+```
+background: radial-gradient(120% 90% at 30% 40%, #2C263F 0%, #213722 55%, #41644A 100%);
+```
 
-6. **Memory**
-   - Add a Core rule: "All text uses `--color-bone` (Wheatfield). Orange/Yellow/Red Wine tokens are accent-only — use them on backgrounds, borders, dividers, and buttons, never as text color."
+(Static — drop the `gradient-spin` animation on `.hero-conic`.) Saffron stays as accent only (CTA underline, scroll line, "01 / WELCOME" label, ART ghost letters at low opacity).
 
-### Out of scope
-No layout, typography, copy, or component-structure changes. Backgrounds, borders, button fills, marquee, hero gradient stay exactly as they are.
+## Mass-replace legacy rgba literals
+
+Sed across `src/components` and `src/routes` to swap the old Retro Sunburst rgba values to the new palette:
+
+- `rgba(21,112,172,…)` (Nice Blue) → `rgba(33,55,34,…)` Dark Green
+- `rgba(15,79,122,…)` → `rgba(44,38,63,…)` Dark Purple
+- `rgba(44,159,199,…)` (Curious Blue) → `rgba(65,100,74,…)` Hunter Green
+- `rgba(245,236,210,…)` (Wheatfield) → `rgba(248,198,98,…)` Saffron
+- `rgba(240,107,4,…)` (Blaze Orange) → `rgba(248,198,98,…)` Saffron
+- `rgba(251,183,40,…)` (Orange Yellow) → `rgba(89,80,130,…)` Ultra Violet
+- `rgba(161,8,31,…)` (Red Wine) → `rgba(89,80,130,…)` Ultra Violet
+
+## Featured-works / product-card depth
+
+Right now product cards sit on the same bg as the page, which is why they look flat-pink. After the token remap they'll automatically use Dark Purple (`--card`) on Dark Green (`--background`) — clear surface separation. Featured artwork frames get an Ultra Violet 1px border + Hunter Green soft shadow for depth.
+
+## What stays the same
+
+- Layout, typography, copy, animations, component structure — untouched
+- Images and artwork — untouched
+- Per-card colors driven by tokens — they automatically restyle; no manual per-card overrides
+
+## Memory update
+
+Replace the "Retro Sunburst" Core rule in `mem/index.md` with the new "Forest Saffron" palette and the rule: hero uses a calm 3-stop radial gradient (Dark Purple → Dark Green → Hunter Green) — never a rainbow conic.
+
+## Files touched
+
+- `src/styles.css` (tokens + hero gradient)
+- `mem/index.md` (palette rule)
+- All `src/components/**` and `src/routes/**` via sed for legacy rgba literals

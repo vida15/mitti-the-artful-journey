@@ -4,20 +4,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* MITTI design system — Teesta & Tea Gardens palette */
+/* MITTI design system — Forest Saffron palette */
 
 @theme inline {
-  --color-void: #1570AC;       /* Nice Blue — base */
-  --color-ink: #0F4F7A;        /* deeper Nice Blue — shadow */
-  --color-ash: #2C9FC7;        /* Curious Blue — surface */
-  --color-bone: #F5ECD2;       /* Wheatfield — foreground */
-  --color-paper: #F5ECD2;
-  --color-ember: #F06B04;      /* Blaze Orange — primary accent */
-  --color-flare: #FBB728;      /* Orange Yellow — soft hover */
-  --color-ochre: #FBB728;      /* Orange Yellow — secondary accent */
-  --color-dust: #F5ECD2;       /* Wheatfield — all text reads as Wheatfield */
-  --color-electric: #2C9FC7;   /* Curious Blue — pop */
-  --color-violet: #A1081F;     /* Red Wine — pop */
+  --color-void: #213722;       /* Dark Green — base */
+  --color-ink: #2C263F;        /* Dark Purple — deep surface */
+  --color-ash: #41644A;        /* Hunter Green — lifted surface / borders */
+  --color-bone: #F8C662;       /* Saffron — foreground (all text) */
+  --color-paper: #F8C662;
+  --color-ember: #F8C662;      /* Saffron — primary accent */
+  --color-flare: #595082;      /* Ultra Violet — soft hover */
+  --color-ochre: #595082;      /* Ultra Violet — secondary accent */
+  --color-dust: #F8C662;       /* Saffron — all text reads Saffron */
+  --color-electric: #41644A;   /* Hunter Green */
+  --color-violet: #595082;     /* Ultra Violet — pop */
 
   --font-display: "Bebas Neue", sans-serif;
   --font-editorial: "Playfair Display", serif;
@@ -69,25 +69,25 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #1570AC;
-  --foreground: #F5ECD2;
-  --card: #0F4F7A;
-  --card-foreground: #F5ECD2;
-  --popover: #0F4F7A;
-  --popover-foreground: #F5ECD2;
-  --primary: #F06B04;
-  --primary-foreground: #F5ECD2;
-  --secondary: #0F4F7A;
-  --secondary-foreground: #F5ECD2;
-  --muted: #0F4F7A;
-  --muted-foreground: #F5ECD2;
-  --accent: #FBB728;
-  --accent-foreground: #1570AC;
+  --background: #213722;
+  --foreground: #F8C662;
+  --card: #2C263F;
+  --card-foreground: #F8C662;
+  --popover: #2C263F;
+  --popover-foreground: #F8C662;
+  --primary: #F8C662;
+  --primary-foreground: #213722;
+  --secondary: #2C263F;
+  --secondary-foreground: #F8C662;
+  --muted: #2C263F;
+  --muted-foreground: #F8C662;
+  --accent: #595082;
+  --accent-foreground: #F8C662;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: #2C9FC7;
-  --input: #2C9FC7;
-  --ring: #F06B04;
+  --border: #41644A;
+  --input: #41644A;
+  --ring: #F8C662;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -158,7 +158,7 @@
 
   ::selection {
     background: var(--color-ember);
-    color: var(--color-bone);
+    color: var(--color-void);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -187,16 +187,8 @@
 }
 
 .hero-conic {
-  background: conic-gradient(
-    from var(--grad-angle),
-    #1570AC 0%,
-    #2C9FC7 20%,
-    #FBB728 45%,
-    #F06B04 65%,
-    #A1081F 85%,
-    #1570AC 100%
-  );
-  animation: gradient-spin 20s linear infinite;
+  background:
+    radial-gradient(120% 90% at 30% 40%, #2C263F 0%, #213722 55%, #41644A 100%);
 }
 
 .font-display { font-family: var(--font-display); letter-spacing: 0; }
