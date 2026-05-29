@@ -64,7 +64,7 @@ export function CartDrawer() {
                             </p>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="font-mono text-xs" style={{ color: "var(--color-ochre)" }}>
+                            <span className="font-mono text-xs" style={{ color: "var(--color-bone)" }}>
                               {formatINR(i.price * i.qty)}
                             </span>
                             <button

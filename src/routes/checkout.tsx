@@ -22,7 +22,7 @@ function Checkout() {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4">
         <p className="font-display text-5xl" style={{ color: "var(--color-bone)" }}>Cart is empty</p>
-        <button onClick={() => navigate({ to: "/collections" })} className="font-mono text-xs uppercase underline" style={{ color: "var(--color-ember)" }}>
+        <button onClick={() => navigate({ to: "/collections" })} className="font-mono text-xs uppercase underline" style={{ color: "var(--color-bone)" }}>
           Browse collections →
         </button>
       </div>
@@ -105,7 +105,7 @@ function Checkout() {
           </p>
         </fieldset>
 
-        {error && <p className="font-mono text-xs" style={{ color: "var(--color-ember)" }}>{error}</p>}
+        {error && <p className="font-mono text-xs" style={{ color: "var(--color-bone)" }}>{error}</p>}
 
         <button
           type="submit"
@@ -128,7 +128,7 @@ function Checkout() {
                   <p className="font-editorial italic" style={{ color: "var(--color-bone)" }}>{i.title}</p>
                   <p className="font-mono text-[10px] uppercase" style={{ color: "var(--color-dust)" }}>{i.artist} · qty {i.qty}{i.size ? ` · ${i.size}` : ""}</p>
                 </div>
-                <span className="font-mono text-xs" style={{ color: "var(--color-ochre)" }}>{formatINR(i.price * i.qty)}</span>
+                <span className="font-mono text-xs" style={{ color: "var(--color-bone)" }}>{formatINR(i.price * i.qty)}</span>
               </li>
             ))}
           </ul>

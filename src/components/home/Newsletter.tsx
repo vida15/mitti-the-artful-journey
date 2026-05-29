@@ -48,7 +48,7 @@ export function Newsletter() {
                 className="flex-1 border-b bg-transparent py-3 text-center font-body outline-none transition-colors focus:border-[var(--color-ember)]"
                 style={{ color: "var(--color-bone)", borderColor: "var(--color-dust)" }}
               />
-              <button type="submit" data-cursor="link" className="font-display text-2xl" style={{ color: "var(--color-ember)" }}>
+              <button type="submit" data-cursor="link" className="font-display text-2xl" style={{ color: "var(--color-bone)" }}>
                 →
               </button>
             </form>

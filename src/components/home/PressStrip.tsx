@@ -13,7 +13,7 @@ export function PressStrip({ items }: { items: PressMention[] }) {
           {loop.map((p, i) => (
             <div key={i} className="mx-12 flex items-center gap-6">
               <span className="font-editorial italic text-2xl md:text-3xl" style={{ color: "var(--color-bone)" }}>{p.publication}</span>
-              <span style={{ color: "var(--color-ochre)" }}>·</span>
+              <span style={{ color: "var(--color-bone)" }}>·</span>
             </div>
           ))}
         </div>

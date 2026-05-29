@@ -34,12 +34,12 @@ export function FilmStrip() {
                       {p.title}
                     </h3>
                     {p.price && (
-                      <span className="font-mono text-sm" style={{ color: "var(--color-ochre)" }}>
+                      <span className="font-mono text-sm" style={{ color: "var(--color-bone)" }}>
                         {formatINR(p.price)}
                       </span>
                     )}
                     {"cta" in p && p.cta && (
-                      <motion.span animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 1.8, repeat: Infinity }} className="font-mono text-xs uppercase" style={{ color: "var(--color-ember)" }}>
+                      <motion.span animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 1.8, repeat: Infinity }} className="font-mono text-xs uppercase" style={{ color: "var(--color-bone)" }}>
                         Shop →
                       </motion.span>
                     )}
@@ -64,7 +64,7 @@ export function FilmStrip() {
                       <p className="font-editorial italic" style={{ fontSize: "clamp(28px, 3vw, 42px)", color: "var(--color-bone)", lineHeight: 1.3 }}>
                         "{p.quote}"
                       </p>
-                      <p className="mt-6 font-mono text-xs uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>
+                      <p className="mt-6 font-mono text-xs uppercase tracking-widest" style={{ color: "var(--color-bone)" }}>
                         — {p.artist}
                       </p>
                     </div>

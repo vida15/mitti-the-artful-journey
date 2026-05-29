@@ -30,7 +30,7 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
             <p className="font-editorial italic leading-snug" style={{ fontSize: "clamp(22px, 3vw, 36px)", color: "var(--color-bone)" }}>
               "{t.quote}"
             </p>
-            <p className="mt-8 font-mono text-xs uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>
+            <p className="mt-8 font-mono text-xs uppercase tracking-widest" style={{ color: "var(--color-bone)" }}>
               — {t.author}{t.location ? `, ${t.location}` : ""}
             </p>
           </motion.div>

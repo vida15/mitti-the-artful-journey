@@ -61,10 +61,10 @@ export function ProductCard({ p, wide = false }: { p: Product; wide?: boolean })
         <p className="mt-1 font-editorial italic text-base leading-tight" style={{ color: "var(--color-bone)" }}>
           {p.title}
         </p>
-        <p className="mt-1 font-mono text-xs" style={{ color: "var(--color-ochre)" }}>
+        <p className="mt-1 font-mono text-xs" style={{ color: "var(--color-bone)" }}>
           {formatINR(p.price_inr)}
         </p>
-        <span className="mt-3 inline-block font-mono text-[10px] uppercase tracking-widest opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ color: "var(--color-ember)" }}>
+        <span className="mt-3 inline-block font-mono text-[10px] uppercase tracking-widest opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ color: "var(--color-bone)" }}>
           Bring Home →
         </span>
       </div>

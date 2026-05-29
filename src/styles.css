@@ -15,7 +15,7 @@
   --color-ember: #F06B04;      /* Blaze Orange — primary accent */
   --color-flare: #FBB728;      /* Orange Yellow — soft hover */
   --color-ochre: #FBB728;      /* Orange Yellow — secondary accent */
-  --color-dust: #B8DCEA;       /* lifted Curious Blue — muted text */
+  --color-dust: #F5ECD2;       /* Wheatfield — all text reads as Wheatfield */
   --color-electric: #2C9FC7;   /* Curious Blue — pop */
   --color-violet: #A1081F;     /* Red Wine — pop */
 
@@ -80,7 +80,7 @@
   --secondary: #0F4F7A;
   --secondary-foreground: #F5ECD2;
   --muted: #0F4F7A;
-  --muted-foreground: #B8DCEA;
+  --muted-foreground: #F5ECD2;
   --accent: #FBB728;
   --accent-foreground: #1570AC;
   --destructive: oklch(0.577 0.245 27.325);

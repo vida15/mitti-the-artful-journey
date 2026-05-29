@@ -30,7 +30,7 @@ function ProductPage() {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-6">
         <p className="font-display text-5xl" style={{ color: "var(--color-bone)" }}>Not found</p>
-        <Link to="/collections" className="font-mono text-xs uppercase underline" style={{ color: "var(--color-ember)" }}>← All works</Link>
+        <Link to="/collections" className="font-mono text-xs uppercase underline" style={{ color: "var(--color-bone)" }}>← All works</Link>
       </div>
     );
   }
@@ -66,7 +66,7 @@ function ProductPage() {
           <h1 className="mt-4 font-editorial italic leading-tight" style={{ fontSize: "clamp(40px, 5vw, 72px)", color: "var(--color-bone)" }}>
             {p.title}
           </h1>
-          <p className="mt-4 font-mono text-lg" style={{ color: "var(--color-ochre)" }}>
+          <p className="mt-4 font-mono text-lg" style={{ color: "var(--color-bone)" }}>
             {formatINR(p.price_inr)}
           </p>
         </div>
@@ -124,7 +124,7 @@ function ProductPage() {
 
         {p.story && (
           <div className="border-l-2 pl-6" style={{ borderColor: "var(--color-ochre)" }}>
-            <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>The Story</p>
+            <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-bone)" }}>The Story</p>
             <p className="mt-3 font-editorial italic text-lg leading-relaxed" style={{ color: "var(--color-bone)" }}>{p.story}</p>
           </div>
         )}
