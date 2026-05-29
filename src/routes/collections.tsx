@@ -36,7 +36,7 @@ function Collections() {
             data-cursor="link"
             className="border px-4 py-2 font-mono text-[11px] uppercase tracking-widest transition-colors"
             style={{
-              borderColor: cat === c ? "var(--color-ember)" : "rgba(44,159,199,0.4)",
+              borderColor: cat === c ? "var(--color-ember)" : "rgba(65,100,74,0.4)",
               color: cat === c ? "var(--color-ember)" : "var(--color-bone)",
             }}
           >

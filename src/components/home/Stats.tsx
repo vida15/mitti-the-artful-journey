@@ -30,7 +30,7 @@ export function Stats() {
     <section style={{ backgroundColor: "var(--color-ash)" }}>
       <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x md:grid-cols-4" style={{ borderColor: "var(--color-dust)" }}>
         {stats.map((s, i) => (
-          <div key={i} className="border-l first:border-l-0" style={{ borderColor: "rgba(44,159,199,0.4)" }}>
+          <div key={i} className="border-l first:border-l-0" style={{ borderColor: "rgba(65,100,74,0.4)" }}>
             <Stat s={s} />
           </div>
         ))}

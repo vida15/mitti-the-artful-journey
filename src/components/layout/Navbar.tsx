@@ -27,7 +27,7 @@ export function Navbar() {
     <header
       className="fixed inset-x-0 top-0 z-50 h-[52px] transition-colors duration-500"
       style={{
-        backgroundColor: scrolled ? "rgba(15,79,122,0.92)" : "rgba(15,79,122,0)",
+        backgroundColor: scrolled ? "rgba(44,38,63,0.92)" : "rgba(44,38,63,0)",
         backdropFilter: scrolled ? "blur(12px)" : "none",
       }}
     >

@@ -35,6 +35,6 @@ export function Manifesto() {
 
 function Word({ index, progress, children }: { index: number; progress: import("framer-motion").MotionValue<number>; children: React.ReactNode }) {
   const opacity = useTransform(progress, [index, index + 0.5], [0.15, 1]);
-  const color = useTransform(opacity, (o) => `rgba(245,236,210, ${o})`);
+  const color = useTransform(opacity, (o) => `rgba(248,198,98, ${o})`);
   return <motion.span style={{ color }}>{children}</motion.span>;
 }

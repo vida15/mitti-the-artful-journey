@@ -60,7 +60,7 @@ export function CustomCursor() {
           width: variant === "view" ? 60 : variant === "link" ? 48 : 28,
           height: variant === "view" ? 60 : variant === "link" ? 48 : 28,
           borderColor: "var(--color-dust)",
-          backgroundColor: variant === "link" ? "rgba(240,107,4,0.12)" : "transparent",
+          backgroundColor: variant === "link" ? "rgba(248,198,98,0.12)" : "transparent",
         }}
       />
     </>
