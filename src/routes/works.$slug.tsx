@@ -86,7 +86,7 @@ function ProductPage() {
                   data-cursor="link"
                   className="border px-4 py-2 font-mono text-xs uppercase tracking-widest transition-colors"
                   style={{
-                    borderColor: size === s.label ? "var(--color-ember)" : "rgba(59,88,103,0.4)",
+                    borderColor: size === s.label ? "var(--color-ember)" : "rgba(44,159,199,0.4)",
                     color: size === s.label ? "var(--color-ember)" : "var(--color-bone)",
                   }}
                 >
@@ -106,7 +106,7 @@ function ProductPage() {
         </button>
 
         {/* Provenance */}
-        <div className="grid grid-cols-2 gap-x-6 gap-y-4 border-y py-6" style={{ borderColor: "rgba(141,162,73,0.2)" }}>
+        <div className="grid grid-cols-2 gap-x-6 gap-y-4 border-y py-6" style={{ borderColor: "rgba(251,183,40,0.2)" }}>
           {[
             ["Artist", p.artists?.name ?? "—"],
             ["Origin", p.artists?.origin ?? "India"],
@@ -130,7 +130,7 @@ function ProductPage() {
         )}
 
         {p.artists && (
-          <Link to="/artists/$slug" params={{ slug: p.artists.slug }} data-cursor="view" className="group flex items-center gap-4 border-t pt-6" style={{ borderColor: "rgba(141,162,73,0.2)" }}>
+          <Link to="/artists/$slug" params={{ slug: p.artists.slug }} data-cursor="view" className="group flex items-center gap-4 border-t pt-6" style={{ borderColor: "rgba(251,183,40,0.2)" }}>
             <img src={p.artists.portrait_url ?? placeholder(p.artists.name, 200, 200, 1)} alt={p.artists.name} className="h-14 w-14 object-cover" />
             <div className="flex-1">
               <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>About the artist</p>
@@ -153,7 +153,7 @@ function RelatedWorks({ productId, artistId }: { productId: string; artistId: st
   const works = (data?.works ?? []).slice(0, 4);
   if (works.length === 0) return null;
   return (
-    <section className="border-t px-6 py-20 md:px-10 md:py-24" style={{ borderColor: "rgba(141,162,73,0.2)" }}>
+    <section className="border-t px-6 py-20 md:px-10 md:py-24" style={{ borderColor: "rgba(251,183,40,0.2)" }}>
       <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>More from the studio</p>
       <h2 className="mt-3 font-editorial italic" style={{ fontSize: "clamp(36px, 5vw, 72px)", color: "var(--color-bone)" }}>You may also like</h2>
       <div className="mt-10 grid grid-cols-2 gap-6 lg:grid-cols-4">

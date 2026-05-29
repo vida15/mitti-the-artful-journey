@@ -38,7 +38,7 @@ function ArtistPage() {
           <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>{a.origin ?? "India"}</p>
           <h1 className="mt-4 font-display leading-none" style={{ fontSize: "clamp(56px, 9vw, 140px)", color: "var(--color-bone)" }}>{a.name}</h1>
           {a.bio && <p className="mt-8 font-editorial italic text-lg leading-relaxed" style={{ color: "var(--color-bone)", opacity: 0.85 }}>{a.bio}</p>}
-          <div className="mt-10 grid grid-cols-3 gap-4 border-t pt-6" style={{ borderColor: "rgba(141,162,73,0.2)" }}>
+          <div className="mt-10 grid grid-cols-3 gap-4 border-t pt-6" style={{ borderColor: "rgba(251,183,40,0.2)" }}>
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>Works</p>
               <p className="mt-1 font-display text-3xl" style={{ color: "var(--color-ember)" }}>{(data?.works ?? []).length}</p>
@@ -55,7 +55,7 @@ function ArtistPage() {
         </div>
       </div>
       {a.bio && (
-        <div className="mx-auto my-24 max-w-3xl border-y py-12 text-center" style={{ borderColor: "rgba(141,162,73,0.2)" }}>
+        <div className="mx-auto my-24 max-w-3xl border-y py-12 text-center" style={{ borderColor: "rgba(251,183,40,0.2)" }}>
           <p className="font-editorial italic" style={{ fontSize: "clamp(28px, 4vw, 48px)", color: "var(--color-bone)" }}>
             "{a.bio.split(".")[0]}."
           </p>
