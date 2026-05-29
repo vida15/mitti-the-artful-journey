@@ -9,7 +9,7 @@ export function FeaturedWorks({ products }: { products: Product[] }) {
 
   return (
     <section className="px-6 py-24 md:px-10 md:py-32">
-      <h2 className="mb-16 text-center font-editorial leading-[1.05]" style={{ fontSize: "clamp(40px, 6vw, 76px)", color: "#2F2A26", fontWeight: 400, letterSpacing: "0.02em" }}>
+      <h2 className="mb-16 text-center font-editorial leading-[1.05]" style={{ fontSize: "clamp(40px, 6vw, 76px)", color: "#2A2622", fontWeight: 400, letterSpacing: "0.02em" }}>
         Featured Works
       </h2>
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

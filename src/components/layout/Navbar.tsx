@@ -27,12 +27,12 @@ export function Navbar() {
     <header
       className="fixed inset-x-0 top-0 z-50 h-[52px] transition-colors duration-500"
       style={{
-        backgroundColor: scrolled ? "rgba(247,243,238,0.92)" : "rgba(247,243,238,0)",
+        backgroundColor: scrolled ? "rgba(243,238,231,0.92)" : "rgba(243,238,231,0)",
         backdropFilter: scrolled ? "blur(12px)" : "none",
       }}
     >
       <div className="mx-auto flex h-full items-center justify-between px-6 md:px-10">
-        <Link to="/" data-cursor="link" className="font-editorial italic" style={{ color: "#2F2A26", fontSize: "1.5rem" }}>
+        <Link to="/" data-cursor="link" className="font-editorial italic" style={{ color: "#2A2622", fontSize: "1.5rem" }}>
           MITTI
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
@@ -42,7 +42,7 @@ export function Navbar() {
               to={l.to}
               data-cursor="link"
               className="font-body text-[11px] uppercase tracking-widest transition-colors hover:text-[var(--color-ember)]"
-              style={{ color: "#2F2A26" }}
+              style={{ color: "#2A2622" }}
             >
               {l.label}
             </Link>
@@ -51,7 +51,7 @@ export function Navbar() {
             onClick={openDrawer}
             data-cursor="link"
             className="font-body text-[11px] uppercase tracking-widest transition-colors hover:text-[var(--color-ember)]"
-            style={{ color: "#2F2A26" }}
+            style={{ color: "#2A2622" }}
           >
             Cart (
             <motion.span key={count} initial={{ scale: 1.4 }} animate={{ scale: 1 }} className="inline-block">
@@ -62,7 +62,7 @@ export function Navbar() {
         </nav>
         <button
           className="font-body text-[11px] uppercase tracking-widest md:hidden"
-          style={{ color: "#2F2A26" }}
+          style={{ color: "#2A2622" }}
           onClick={toggleMobile}
         >
           Menu

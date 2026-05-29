@@ -30,7 +30,7 @@ export function Hero() {
           animate={{ y: [-20, 20] }}
           transition={{ duration: 8, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
           className="font-display select-none leading-none"
-          style={{ fontSize: "clamp(280px, 30vw, 420px)", color: "rgba(47,42,38,0.06)" }}
+          style={{ fontSize: "clamp(280px, 30vw, 420px)", color: "rgba(42,38,34,0.06)" }}
         >
           ART
         </motion.span>
@@ -63,7 +63,7 @@ export function Hero() {
           — 01 / Welcome to MITTI
         </motion.p>
 
-        <h1 className="mt-6 font-editorial leading-[1.02]" style={{ fontSize: "clamp(56px, 8vw, 80px)", color: "#2F2A26", fontWeight: 300, letterSpacing: "0.02em" }}>
+        <h1 className="mt-6 font-editorial leading-[1.02]" style={{ fontSize: "clamp(56px, 8vw, 80px)", color: "#2A2622", fontWeight: 300, letterSpacing: "0.02em" }}>
           {["Objects", "with a", "Soul."].map((w, i) => (
             <span key={i} className="block overflow-hidden">
               <motion.span
@@ -83,7 +83,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.95 }}
           className="mt-8 max-w-md"
-          style={{ color: "#2F2A26", fontSize: "0.9rem", letterSpacing: "0.1em" }}
+          style={{ color: "#2A2622", fontSize: "0.9rem", letterSpacing: "0.1em" }}
         >
           2,400 works. 94 artists. Zero compromises.
         </motion.p>
