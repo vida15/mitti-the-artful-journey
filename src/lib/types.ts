@@ -72,11 +72,11 @@ export const formatINR = (n: number) =>
 /** Solid-color SVG placeholder so the build is visually complete without art assets. */
 export function placeholder(title: string, w = 800, h = 1000, hue = 0): string {
   const palette = [
-    ["#283933", "#546144"],  /* deep botanical → moss */
-    ["#A54F5E", "#283933"],  /* rose → deep green */
-    ["#546144", "#BEBD95"],  /* moss → sage */
-    ["#E88E46", "#A54F5E"],  /* ochre → rose */
-    ["#D68687", "#546144"],  /* blush → moss */
+    ["#2F2A26", "#7C8973"],  /* deep botanical → moss */
+    ["#B98B73", "#2F2A26"],  /* rose → deep green */
+    ["#7C8973", "#7C8973"],  /* moss → sage */
+    ["#B98B73", "#B98B73"],  /* ochre → rose */
+    ["#D68687", "#7C8973"],  /* blush → moss */
   ];
   const [a, b] = palette[hue % palette.length];
   const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${w} ${h}'>

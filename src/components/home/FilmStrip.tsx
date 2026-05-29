@@ -47,21 +47,21 @@ export function FilmStrip() {
                 </>
               )}
               {p.type === "type" && (
-                <div className="relative h-full w-full" style={{ backgroundColor: "#E6DED2" }}>
+                <div className="relative h-full w-full" style={{ backgroundColor: "#EFE9E0" }}>
                   <span
                     className="font-editorial italic absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 select-none leading-none"
-                    style={{ fontSize: "clamp(120px, 18vw, 260px)", color: "#2A2622" }}
+                    style={{ fontSize: "clamp(120px, 18vw, 260px)", color: "#2F2A26" }}
                   >
                     {p.text}
                   </span>
                 </div>
               )}
               {p.type === "split" && (
-                <div className="grid h-full grid-cols-2" style={{ backgroundColor: "#E6DED2" }}>
+                <div className="grid h-full grid-cols-2" style={{ backgroundColor: "#EFE9E0" }}>
                   <img src={placeholder("Artist", 1000, 1200, 3)} alt="" className="h-full w-full object-cover" />
                   <div className="flex items-center px-12">
                     <div>
-                      <p className="font-editorial italic" style={{ fontSize: "clamp(28px, 3vw, 42px)", color: "#2A2622", lineHeight: 1.3 }}>
+                      <p className="font-editorial italic" style={{ fontSize: "clamp(28px, 3vw, 42px)", color: "#2F2A26", lineHeight: 1.3 }}>
                         "{p.quote}"
                       </p>
                       <p className="mt-6 font-mono text-xs uppercase tracking-widest" style={{ color: "var(--color-ochre)" }}>

@@ -8,17 +8,17 @@
 /* MITTI design system — Parchment palette (warm, editorial, hand-printed) */
 
 @theme inline {
-  --color-void: #F3EEE7;       /* warm parchment — global background */
-  --color-ink: #E6DED2;        /* surface (cards, panels) */
-  --color-ash: #E6DED2;        /* surface */
-  --color-bone: #2A2622;       /* primary text — dark */
-  --color-paper: #2A2622;
-  --color-ember: #A54F5E;      /* burnt rose — primary accent */
-  --color-flare: #A54F5E;      /* hover (same rose, no neon) */
-  --color-ochre: #E88E46;      /* ochre — secondary accent */
-  --color-dust: #6B5E52;       /* warm muted brown — secondary text */
-  --color-electric: #BEBD95;   /* dusty sage (mint replaced) */
-  --color-violet: #BEBD95;     /* dusty sage (iris replaced) */
+  --color-void: #F7F3EE;       /* warm ivory — global background */
+  --color-ink: #EFE9E0;        /* soft ivory — surface */
+  --color-ash: #EFE9E0;        /* surface */
+  --color-bone: #2F2A26;       /* charcoal — primary text */
+  --color-paper: #2F2A26;
+  --color-ember: #B98B73;      /* muted clay — primary accent */
+  --color-flare: #B98B73;      /* hover (same clay) */
+  --color-ochre: #B98B73;      /* clay (ochre collapsed) */
+  --color-dust: #2F2A26;       /* charcoal (use opacity in component) */
+  --color-electric: #7C8973;   /* dusty sage */
+  --color-violet: #7C8973;     /* dusty sage */
 
   --font-display: "Cormorant Garamond", serif;
   --font-editorial: "Cormorant Garamond", serif;
@@ -70,25 +70,25 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #F3EEE7;
-  --foreground: #2A2622;
-  --card: #E6DED2;
-  --card-foreground: #2A2622;
-  --popover: #E6DED2;
-  --popover-foreground: #2A2622;
-  --primary: #A54F5E;
-  --primary-foreground: #F3EEE7;
-  --secondary: #E6DED2;
-  --secondary-foreground: #2A2622;
-  --muted: #E6DED2;
-  --muted-foreground: #6B5E52;
-  --accent: #E88E46;
-  --accent-foreground: #2A2622;
+  --background: #F7F3EE;
+  --foreground: #2F2A26;
+  --card: #EFE9E0;
+  --card-foreground: #2F2A26;
+  --popover: #EFE9E0;
+  --popover-foreground: #2F2A26;
+  --primary: #B98B73;
+  --primary-foreground: #F7F3EE;
+  --secondary: #EFE9E0;
+  --secondary-foreground: #2F2A26;
+  --muted: #EFE9E0;
+  --muted-foreground: rgba(47,42,38,0.65);
+  --accent: #7C8973;
+  --accent-foreground: #F7F3EE;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: #D4C9BC;
-  --input: #D4C9BC;
-  --ring: #A54F5E;
+  --border: rgba(47,42,38,0.12);
+  --input: rgba(47,42,38,0.12);
+  --ring: #B98B73;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -160,7 +160,7 @@
 
   ::selection {
     background: var(--color-ember);
-    color: #F3EEE7;
+    color: #F7F3EE;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -194,8 +194,8 @@
 .cta-outline {
   display: inline-block;
   padding: 0.85rem 1.6rem;
-  border: 1px solid #2A2622;
-  color: #2A2622;
+  border: 1px solid #2F2A26;
+  color: #2F2A26;
   background: transparent;
   font-family: var(--font-body);
   font-size: 0.8rem;
@@ -204,7 +204,7 @@
   border-radius: 0;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
-.cta-outline:hover { background-color: #2A2622; color: #F3EEE7; }
+.cta-outline:hover { background-color: #2F2A26; color: #F7F3EE; }
 
 button, .btn { border-radius: 0; }
 
