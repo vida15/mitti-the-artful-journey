@@ -2,13 +2,13 @@ import { Link } from "@tanstack/react-router";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t" style={{ backgroundColor: "var(--color-ash)", borderColor: "rgba(44,159,199,0.4)" }}>
+    <footer className="relative overflow-hidden border-t" style={{ backgroundColor: "var(--color-ash)", borderColor: "rgba(65,100,74,0.4)" }}>
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 select-none whitespace-nowrap text-center font-display leading-none"
         style={{
           fontSize: "clamp(80px, 14vw, 200px)",
-          color: "rgba(245,236,210,0.04)",
+          color: "rgba(248,198,98,0.04)",
         }}
       >
         MITTI
@@ -54,7 +54,7 @@ export function Footer() {
           ))}
         </div>
       </div>
-      <div className="relative mx-auto flex max-w-7xl items-center justify-between border-t px-6 py-6 font-mono text-[10px] uppercase md:px-10" style={{ borderColor: "rgba(44,159,199,0.4)", color: "var(--color-dust)" }}>
+      <div className="relative mx-auto flex max-w-7xl items-center justify-between border-t px-6 py-6 font-mono text-[10px] uppercase md:px-10" style={{ borderColor: "rgba(65,100,74,0.4)", color: "var(--color-dust)" }}>
         <span>© {new Date().getFullYear()} MITTI</span>
         <span>VISA · MC · UPI · COD</span>
       </div>

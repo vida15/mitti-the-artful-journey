@@ -14,7 +14,7 @@ export function VideoReel() {
       </motion.div>
       <div className="absolute inset-0 grid grid-cols-12 gap-2 p-6 md:p-10 opacity-30">
         {Array.from({ length: 36 }).map((_, i) => (
-          <div key={i} className="aspect-square" style={{ border: "1px solid rgba(245,236,210,0.05)" }} />
+          <div key={i} className="aspect-square" style={{ border: "1px solid rgba(248,198,98,0.05)" }} />
         ))}
       </div>
       <motion.div style={{ opacity }} className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">

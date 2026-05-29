@@ -36,7 +36,7 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
           </motion.div>
         </AnimatePresence>
       </div>
-      <div className="absolute bottom-8 left-1/2 h-px w-1/3 -translate-x-1/2" style={{ backgroundColor: "rgba(44,159,199,0.3)" }}>
+      <div className="absolute bottom-8 left-1/2 h-px w-1/3 -translate-x-1/2" style={{ backgroundColor: "rgba(65,100,74,0.3)" }}>
         <motion.div
           key={t.id}
           initial={{ scaleX: 0 }}
