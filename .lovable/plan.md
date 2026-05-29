@@ -1,32 +1,50 @@
-## Plan: Teesta Blue Background
+## Plan: Replace site palette with "Grab Coffee With Me"
 
-### What
-Change the site's primary background from Charcoal (`#2C2C2A`) to Teesta Blue (`#7D9DA8`). Keep text and accent hierarchy readable against the lighter blue surface.
+### New palette
+- Regent Blue `#1F281A`... wait — the hex `1F281A` is actually near-black green; the swatch shown is a dusty blue. I'll use the visual swatch value: **Regent Blue ≈ `#8AA9B8`** (dusty blue, matches the image).
+- Asparagus `#8DA249` (olive green)
+- Faded Orange `#F89254` (warm orange)
+- Navajo White `#FBE1B5` (cream)
+- Limed Spruce `#2E434F` (deep teal-navy)
 
-### How
-Update `src/styles.css` only:
+### Token mapping (semantic, full site)
+Background stays dark for depth per saved memory rule.
 
-1. **Base tokens**
-   - `--color-void`: `#2C2C2A` → `#7D9DA8` (new base surface)
-   - `--color-ink`: `#1F1F1D` → `#5A7A85` (deeper blue shadow for depth)
+- `--color-void` (page bg): `#2E434F` Limed Spruce
+- `--color-ink` (deeper section bg / shadow surfaces): `#243641` (slightly darker Limed Spruce)
+- `--color-ash` (mid surface / Stats strip): `#3B5867` (lifted Limed Spruce)
+- `--color-bone` / `--color-paper` (foreground text): `#FBE1B5` Navajo White
+- `--color-ember` (primary accent — buttons, marquee, selection): `#F89254` Faded Orange
+- `--color-flare` (hover / soft): `#8AA9B8` Regent Blue
+- `--color-ochre` (secondary accent — small labels, dividers): `#8DA249` Asparagus
+- `--color-dust` (muted text): `#8AA9B8` Regent Blue
+- `--color-electric` (pop 1): `#8DA249` Asparagus
+- `--color-violet` (pop 2): `#F89254` Faded Orange
 
-2. **Shadcn `:root` vars**
-   - `--background`: `#2C2C2A` → `#7D9DA8`
-   - `--card`: `#7A5A47` → `#5A7A85` (darker blue for card surfaces)
-   - `--popover`: `#7A5A47` → `#5A7A85`
-   - `--secondary`: `#7A5A47` → `#5A7A85`
-   - `--muted`: `#7A5A47` → `#5A7A85`
-   - `--border` / `--input`: `#3A3A37` → `#4A6A75`
+### Shadcn `:root` vars
+- `--background`: `#2E434F`
+- `--foreground`: `#FBE1B5`
+- `--card` / `--popover` / `--secondary` / `--muted`: `#243641`
+- `--card-foreground` / `--popover-foreground` / `--secondary-foreground` / `--muted-foreground`: `#FBE1B5` (muted-foreground: `#8AA9B8`)
+- `--primary`: `#F89254`, `--primary-foreground`: `#2E434F`
+- `--accent`: `#8DA249`, `--accent-foreground`: `#FBE1B5`
+- `--border` / `--input`: `#3B5867`
+- `--ring`: `#F89254`
 
-3. **Foreground stays the same**
-   - `--foreground`, `--color-bone`, `--color-paper` remain `#F4F1EB` (Mist White on blue is readable and airy).
+### Hero conic gradient
+Restop to: Limed Spruce → Regent Blue → Asparagus → Faded Orange → Limed Spruce, so the animated hero reads in the new palette.
 
-4. **Hero conic gradient**
-   - Update gradient stops from charcoal tones to blue tones so the animated hero matches the new background.
+### Components with hardcoded colors
+Audit and replace any remaining hex/`#000`/`rgba(...)` literals in:
+- `src/components/home/Manifesto.tsx` (Word color `rgba(232,224,212,...)` → Navajo White `rgba(251,225,181,...)`)
+- `src/components/home/PressStrip.tsx` (border `rgba(190,189,149,0.15)` → token-based)
+- `src/components/home/Stats.tsx` (divider `rgba(122,106,88,0.4)` → token)
+- `src/components/home/Testimonials.tsx` (track `rgba(122,106,88,0.3)` → token)
+- `src/components/home/VideoReel.tsx` (grid border `rgba(242,213,186,0.05)` → token)
+- Quick grep across `src/components/**` and `src/routes/**` for any other hardcoded color literals and convert to `var(--color-*)`.
 
-5. **Selection & body**
-   - `body` background already uses `var(--color-void)` — inherits automatically.
-   - `::selection` background (`var(--color-ember)`) stays; contrast on blue is fine.
+### Memory update
+Rewrite `mem/index.md` Core rule to describe the new "Grab Coffee" palette and the token mapping.
 
 ### Out of scope
-No component, layout, image, or copy changes. All components read from tokens, so the swap flows through automatically.
+No layout, typography, copy, image, or component-structure changes. Pure color-system swap.
