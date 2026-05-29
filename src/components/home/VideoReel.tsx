@@ -16,11 +16,11 @@ export function VideoReel() {
         ))}
       </div>
       <motion.div style={{ opacity }} className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-        <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "#A54F5E" }}>— 05 / Reel</p>
-        <h2 className="mt-4 max-w-4xl font-editorial italic leading-[1.05]" style={{ fontSize: "clamp(48px, 7vw, 112px)", color: "#F3EEE7" }}>
+        <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "#BEBD95" }}>— 05 / Reel</p>
+        <h2 className="mt-4 max-w-4xl font-editorial italic" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", color: "#F3EEE7", fontWeight: 300, lineHeight: 1.2, letterSpacing: "-0.01em" }}>
           The hand is the algorithm.
         </h2>
-        <p className="mt-6 max-w-xl text-base md:text-lg" style={{ color: "#BEBD95" }}>
+        <p className="mt-6 max-w-xl" style={{ color: "#BEBD95", fontSize: "1rem", lineHeight: 1.75 }}>
           Six years on, every piece on MITTI is still chosen by a human who saw it leave the studio.
         </p>
       </motion.div>
