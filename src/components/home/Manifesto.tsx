@@ -11,9 +11,9 @@ export function Manifesto() {
   const progress = useTransform(scrollYProgress, [0.15, 0.75], [0, words.length]);
 
   return (
-    <section ref={ref} style={{ height: "300vh", backgroundColor: "#2A2622" }}>
+    <section ref={ref} style={{ height: "300vh", backgroundColor: "#000" }}>
       <div className="sticky top-0 flex h-[100vh] items-center justify-center px-6">
-        <p className="text-center font-editorial italic" style={{ fontSize: "clamp(1.4rem, 3vw, 1.8rem)", fontWeight: 300, lineHeight: 1.5, maxWidth: "680px" }}>
+        <p className="max-w-3xl text-center font-editorial italic leading-[1.4]" style={{ fontSize: "clamp(24px, 3.5vw, 48px)" }}>
           {words.map((w, i) => (
             <Word key={i} index={i} progress={progress}>
               {w}{" "}
@@ -24,9 +24,8 @@ export function Manifesto() {
             animate={{ scale: [1, 1.4, 1] }}
             transition={{ duration: 1.2, repeat: Infinity }}
             className="ml-2 inline-block"
-            // ochre accent
           >
-            <span style={{ color: "#E88E46" }}>✦</span>
+            ✦
           </motion.span>
         </p>
       </div>
@@ -36,6 +35,6 @@ export function Manifesto() {
 
 function Word({ index, progress, children }: { index: number; progress: import("framer-motion").MotionValue<number>; children: React.ReactNode }) {
   const opacity = useTransform(progress, [index, index + 0.5], [0.15, 1]);
-  const color = useTransform(opacity, (o) => `rgba(243, 238, 231, ${o})`);
+  const color = useTransform(opacity, (o) => `rgba(232, 224, 212, ${o})`);
   return <motion.span style={{ color }}>{children}</motion.span>;
 }

@@ -1,1 +1,0 @@
-Mitti - the artful journey

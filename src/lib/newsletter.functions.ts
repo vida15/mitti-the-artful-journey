@@ -13,8 +13,7 @@ export const subscribeNewsletter = createServerFn({ method: "POST" })
     );
     const { error } = await supabase.from("newsletter").insert({ email: data.email.toLowerCase() });
     if (error && !error.message.includes("duplicate")) {
-      console.error("[subscribeNewsletter] insert failed:", error);
-      return { ok: false, error: "Unable to subscribe. Please try again." };
+      return { ok: false, error: error.message };
     }
     return { ok: true };
   });

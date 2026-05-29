@@ -30,7 +30,7 @@ export function Hero() {
           animate={{ y: [-20, 20] }}
           transition={{ duration: 8, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
           className="font-display select-none leading-none"
-          style={{ fontSize: "clamp(280px, 30vw, 420px)", color: "rgba(42,38,34,0.06)" }}
+          style={{ fontSize: "clamp(280px, 30vw, 420px)", color: "rgba(232,224,212,0.04)" }}
         >
           ART
         </motion.span>
@@ -49,17 +49,27 @@ export function Hero() {
       </div>
 
       {/* Vertical accent line */}
-      <div className="absolute right-[42vw] top-1/2 hidden h-20 w-px -translate-y-1/2 md:block" style={{ backgroundColor: "#E88E46" }} />
+      <div className="absolute right-[42vw] top-1/2 hidden h-20 w-px -translate-y-1/2 md:block" style={{ backgroundColor: "var(--color-ochre)" }} />
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-6 md:px-10">
-        <h1 className="font-editorial" style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)", color: "#2A2622", fontWeight: 300, letterSpacing: "-0.01em", lineHeight: 1.1, maxWidth: "700px" }}>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="font-mono text-[11px] uppercase tracking-[0.15em]"
+          style={{ color: "var(--color-ochre)" }}
+        >
+          — 01 / Welcome to MITTI
+        </motion.p>
+
+        <h1 className="mt-6 font-editorial italic font-bold leading-[0.95]" style={{ fontSize: "clamp(64px, 8vw, 112px)", color: "var(--color-bone)" }}>
           {["Objects", "with a", "Soul."].map((w, i) => (
             <span key={i} className="block overflow-hidden">
               <motion.span
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1 + i * 0.15, ease: [0.76, 0, 0.24, 1] }}
+                transition={{ duration: 0.7, delay: 0.2 + i * 0.15, ease: [0.76, 0, 0.24, 1] }}
                 className="block"
               >
                 {w}
@@ -71,31 +81,35 @@ export function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.85 }}
-          className="mt-8 max-w-md font-body"
-          style={{ color: "#6B5E52", fontSize: "0.85rem", letterSpacing: "0.08em", lineHeight: 1.75 }}
+          transition={{ duration: 0.6, delay: 0.95 }}
+          className="mt-8 max-w-md text-lg"
+          style={{ color: "var(--color-dust)" }}
         >
-          Handpicked from studios, villages, and dye yards across India.
+          2,400 works. 94 artists. Zero compromises.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.05 }}
+          transition={{ duration: 0.6, delay: 1.15 }}
           className="mt-10 flex flex-wrap items-center gap-8"
         >
           <a
             ref={ctaRef}
             href="/collections"
             data-cursor="link"
-            className="cta-outline"
+            className="group relative font-editorial italic text-2xl transition-colors duration-300 hover:text-[var(--color-ember)]"
+            style={{ color: "var(--color-bone)" }}
           >
             Explore the Collection
+            <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-2">→</span>
+            <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100" style={{ backgroundColor: "var(--color-ember)" }} />
           </a>
           <a
             href="/artists"
             data-cursor="link"
-            className="cta-outline-sage"
+            className="font-mono text-[11px] uppercase tracking-widest transition-colors hover:text-[var(--color-bone)]"
+            style={{ color: "var(--color-dust)" }}
           >
             Our Artists ↗
           </a>
@@ -104,14 +118,14 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "#6B5E52" }}>
+        <span className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>
           Scroll
         </span>
         <motion.span
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           className="block h-6 w-px"
-          style={{ backgroundColor: "#6B5E52" }}
+          style={{ backgroundColor: "var(--color-dust)" }}
         />
       </div>
     </section>

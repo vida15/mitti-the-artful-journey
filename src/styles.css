@@ -4,27 +4,26 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* MITTI design system — Parchment palette (warm, editorial, hand-printed) */
+/* MITTI design system — Glow palette (floral, deep botanical) */
 
 @theme inline {
-  --color-void: #F3EEE7;       /* parchment — global background */
-  --color-ink: #E6DED2;        /* secondary surface (cards, inset) */
-  --color-ash: #E6DED2;
-  --color-bone: #2A2622;       /* charcoal — primary text + dark anchor */
-  --color-paper: #2A2622;
-  --color-ember: #A54F5E;      /* burnt rose — CTA / price */
-  --color-flare: #A54F5E;
-  --color-ochre: #E88E46;      /* warm ochre — tags / hover / ✦ */
-  --color-dust: #6B5E52;       /* muted text */
-  --color-electric: #BEBD95;   /* dusty sage — dividers / labels */
-  --color-violet: #BEBD95;
-  --color-hairline: #D4C9BC;   /* card hover hairline */
+  --color-void: #283933;       /* deep botanical green — base */
+  --color-ink: #1a2622;        /* darker ink */
+  --color-ash: #546144;        /* moss surface */
+  --color-bone: #F2D5BA;       /* warm cream — foreground */
+  --color-paper: #F2D5BA;
+  --color-ember: #E2425A;      /* vivid rose — primary */
+  --color-flare: #FF8FA3;      /* hot blush — accent hover */
+  --color-ochre: #FFA235;      /* bright marigold — secondary accent */
+  --color-dust: #BEBD95;       /* sage — muted */
+  --color-electric: #34D6C1;   /* electric mint — pop accent */
+  --color-violet: #8C6BE6;     /* iris violet — pop accent */
 
-  --font-display: "Cormorant Garamond", serif;
-  --font-editorial: "Cormorant Garamond", serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "Inter", system-ui, sans-serif;
-  --font-accent: "Cormorant Garamond", serif;
+  --font-display: "Bebas Neue", sans-serif;
+  --font-editorial: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-accent: "Abril Fatface", serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -70,24 +69,24 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #F3EEE7;
-  --foreground: #2A2622;
-  --card: #E6DED2;
-  --card-foreground: #2A2622;
-  --popover: #E6DED2;
-  --popover-foreground: #2A2622;
+  --background: #283933;
+  --foreground: #F2D5BA;
+  --card: #546144;
+  --card-foreground: #F2D5BA;
+  --popover: #546144;
+  --popover-foreground: #F2D5BA;
   --primary: #A54F5E;
-  --primary-foreground: #F3EEE7;
-  --secondary: #E6DED2;
-  --secondary-foreground: #2A2622;
-  --muted: #E6DED2;
-  --muted-foreground: #6B5E52;
+  --primary-foreground: #F2D5BA;
+  --secondary: #546144;
+  --secondary-foreground: #F2D5BA;
+  --muted: #546144;
+  --muted-foreground: #BEBD95;
   --accent: #E88E46;
-  --accent-foreground: #2A2622;
+  --accent-foreground: #283933;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: #E6DED2;
-  --input: #D4C9BC;
+  --border: #546144;
+  --input: #546144;
   --ring: #A54F5E;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -148,10 +147,9 @@
     background-color: var(--color-void);
     color: var(--color-bone);
     font-family: var(--font-body);
-    font-weight: 400;
-    line-height: 1.75;
+    font-weight: 300;
+    line-height: 1.7;
     cursor: none;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.15 0 0 0 0 0.13 0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
 
   @media (pointer: coarse) {
@@ -159,15 +157,23 @@
   }
 
   ::selection {
-    background: #A54F5E;
-    color: #F3EEE7;
+    background: var(--color-ember);
+    color: var(--color-void);
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-editorial);
-    font-weight: 400;
-    letter-spacing: -0.01em;
   }
+}
+
+@property --grad-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes gradient-spin {
+  to { --grad-angle: 360deg; }
 }
 
 @keyframes scroll-bounce {
@@ -181,61 +187,25 @@
 }
 
 .hero-conic {
-  background-color: var(--color-void);
+  background: conic-gradient(
+    from var(--grad-angle),
+    #283933 0%,
+    #1a2622 25%,
+    rgba(165, 79, 94, 0.12) 50%,
+    rgba(232, 142, 70, 0.08) 75%,
+    #283933 100%
+  );
+  animation: gradient-spin 20s linear infinite;
 }
 
 .font-display { font-family: var(--font-display); letter-spacing: 0; }
 .font-editorial { font-family: var(--font-editorial); }
 .font-body { font-family: var(--font-body); }
-.font-mono { font-family: var(--font-body); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; }
+.font-mono { font-family: var(--font-mono); letter-spacing: 0.1em; }
 .font-accent { font-family: var(--font-accent); }
 
-.label-mini {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #6B5E52;
-}
-
-/* Outlined CTA — flat, no glassmorphism */
-.cta-outline {
-  display: inline-block;
-  padding: 0.85rem 1.6rem;
-  border: 1.5px solid #2A2622;
-  color: #2A2622;
-  background: transparent;
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.75rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  border-radius: 0;
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-.cta-outline:hover { background-color: #2A2622; color: #F3EEE7; }
-
-.cta-outline-sage {
-  display: inline-block;
-  padding: 0.85rem 1.6rem;
-  border: 1.5px solid #BEBD95;
-  color: #6B5E52;
-  background: transparent;
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.75rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  border-radius: 0;
-  transition: color 0.4s ease, border-color 0.4s ease;
-}
-.cta-outline-sage:hover { color: #2A2622; border-color: #2A2622; }
-
-button, .btn { border-radius: 0; }
-input, textarea, select { border-radius: 2px; }
-
 @media (prefers-reduced-motion: reduce) {
+  .hero-conic { animation: none; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;

@@ -13,12 +13,12 @@ function Stat({ s }: { s: StatItem }) {
   const display = s.float ? (v / 10).toFixed(1) : v.toLocaleString("en-IN");
   return (
     <div className="flex flex-col items-start px-6 py-10">
-      <span ref={ref} className="font-editorial leading-none" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: "#A54F5E", fontWeight: 300, letterSpacing: "-0.01em" }}>
+      <span ref={ref} className="font-display leading-none" style={{ fontSize: "clamp(48px, 6vw, 88px)", color: "var(--color-ember)" }}>
         {s.prefix ?? ""}
         {display}
         {s.suffix}
       </span>
-      <span className="mt-4" style={{ color: "#6B5E52", fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "Inter, sans-serif", fontWeight: 500 }}>
+      <span className="mt-3 font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>
         {s.label}
       </span>
     </div>
@@ -27,10 +27,10 @@ function Stat({ s }: { s: StatItem }) {
 
 export function Stats() {
   return (
-    <section className="py-20" style={{ backgroundColor: "#E6DED2" }}>
-      <div className="mx-auto grid max-w-7xl grid-cols-2 md:grid-cols-4">
+    <section style={{ backgroundColor: "var(--color-ash)" }}>
+      <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x md:grid-cols-4" style={{ borderColor: "var(--color-dust)" }}>
         {stats.map((s, i) => (
-          <div key={i} className="border-l first:border-l-0" style={{ borderColor: "#D4C9BC" }}>
+          <div key={i} className="border-l first:border-l-0" style={{ borderColor: "rgba(122,106,88,0.4)" }}>
             <Stat s={s} />
           </div>
         ))}
