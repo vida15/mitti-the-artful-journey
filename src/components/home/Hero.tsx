@@ -30,7 +30,7 @@ export function Hero() {
           animate={{ y: [-20, 20] }}
           transition={{ duration: 8, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
           className="font-display select-none leading-none"
-          style={{ fontSize: "clamp(280px, 30vw, 420px)", color: "rgba(251,225,181,0.04)" }}
+          style={{ fontSize: "clamp(280px, 30vw, 420px)", color: "rgba(245,236,210,0.04)" }}
         >
           ART
         </motion.span>
