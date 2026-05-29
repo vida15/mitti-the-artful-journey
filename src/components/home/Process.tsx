@@ -7,11 +7,11 @@ const steps = [
   { n: "04", title: "Send", body: "Museum-grade packing in Mumbai. Insured, tracked, in your hands within ten days." },
 ];
 
-const accents = ["#A54F5E", "#E88E46", "#A54F5E", "#E88E46"];
+const accents = ["#B98B73", "#B98B73", "#B98B73", "#B98B73"];
 
 export function Process() {
   return (
-    <section className="px-6 py-24 md:px-10 md:py-32" style={{ backgroundColor: "#E6DED2" }}>
+    <section className="px-6 py-24 md:px-10 md:py-32" style={{ backgroundColor: "#EFE9E0" }}>
       <div className="mx-auto max-w-7xl">
         <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "var(--color-dust)" }}>— 04 / The Method</p>
         <h2 className="mt-4 max-w-3xl font-editorial italic leading-[1.05]" style={{ fontSize: "clamp(48px, 6vw, 96px)", color: "var(--color-bone)" }}>
@@ -29,7 +29,7 @@ export function Process() {
             >
               <span className="absolute left-0 top-2 block h-12 w-px" style={{ backgroundColor: accents[i] }} />
               <span className="font-mono text-[11px] uppercase tracking-widest" style={{ color: accents[i] }}>{s.n}</span>
-              <h3 className="mt-3 font-editorial italic text-3xl" style={{ color: "#2A2622" }}>{s.title}</h3>
+              <h3 className="mt-3 font-editorial italic text-3xl" style={{ color: "#2F2A26" }}>{s.title}</h3>
               <p className="mt-4 text-sm leading-relaxed" style={{ color: "var(--color-dust)" }}>{s.body}</p>
             </motion.div>
           ))}

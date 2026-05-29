@@ -27,7 +27,7 @@ export function Marquee() {
         {[...Array(2)].map((_, dup) => (
           <div key={dup} className="flex items-center">
             {items.map((t, i) => (
-              <span key={`${dup}-${i}`} className="font-editorial italic text-2xl" style={{ color: "#F3EEE7" }}>
+              <span key={`${dup}-${i}`} className="font-editorial italic text-2xl" style={{ color: "#F7F3EE" }}>
                 <span className="mx-12">{t}</span>
                 <span>·</span>
               </span>

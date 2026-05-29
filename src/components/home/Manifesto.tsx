@@ -11,7 +11,7 @@ export function Manifesto() {
   const progress = useTransform(scrollYProgress, [0.15, 0.75], [0, words.length]);
 
   return (
-    <section ref={ref} style={{ height: "300vh", backgroundColor: "#2A2622" }}>
+    <section ref={ref} style={{ height: "300vh", backgroundColor: "#2F2A26" }}>
       <div className="sticky top-0 flex h-[100vh] items-center justify-center px-6">
         <p className="max-w-3xl text-center font-editorial italic leading-[1.4]" style={{ fontSize: "clamp(24px, 3.5vw, 48px)" }}>
           {words.map((w, i) => (
